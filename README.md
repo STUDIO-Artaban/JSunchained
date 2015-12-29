@@ -1,2 +1,2 @@
 # JSunchained
-JSunchained - is a JavaScript library that makes JS an application language.
+**JSunchained** is a way to make JavaScript an application language.
