@@ -145,7 +145,6 @@ final public class UView extends FrameLayout {
 		                		"window.console.log = function(msg) {\n" +
 		                		"    unchainedConsole.log(msg);\n" +
 		                		"};\n" +
-		                		"window.requestUnchained = function() { };\n" +
 		                		"</script>\n" + mHTML.substring(pos);
 		                pos = mHTML.indexOf("</body>");
 		                if (mOnline)

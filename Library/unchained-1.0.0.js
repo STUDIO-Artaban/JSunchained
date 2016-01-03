@@ -3,10 +3,6 @@
    All rights reserved. */
 
 'use strict';
-
-window.console.log = function(msg) {
-    unchainedConsole.log(msg);
-};
 window.requestUnchained = function() { };
 ////// Init
 
