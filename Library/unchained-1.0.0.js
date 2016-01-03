@@ -1,8 +1,15 @@
 /* Created by Pascal VIGUIE on 11/15/2015.
-   Copyright (c) 2015 - STUDIO Artaban.
+   Copyright(c) 2016 - STUDIO Artaban.
    All rights reserved. */
 
 'use strict';
+
+window.console.log = function(msg) {
+    unchainedConsole.log(msg);
+};
+window.requestUnchained = function() { };
+////// Init
+
 window.UNCHAINED_ERR_WRONG_PARAMETER = 1;
 window.UNCHAINED_ERR_ELEMENT_NOT_FOUND = 2;
 window.UNCHAINED_ERR_NOT_IMG_ELEMENT = 3;
