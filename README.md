@@ -10,3 +10,13 @@ En effet, **JavaScript** dépend du navigateur dans lequel l'**HTML** contenant 
 Comme vous l'aurez sans doute compris, ce composant dépend du système, ou **OS**, sur lequel vous souhaitez créer votre application. Actuellement il en existe deux:
 * Android
 * iOS
+
+**NB:** Avant toute installation veillez à importer les sous-modules avec les commandes **git** ci-dessous.
+
+```bash
+$ cd libeng/
+$ git submodule init
+$ git submodule update
+```
+
+# Android
