@@ -14,7 +14,7 @@ Comme vous l'aurez sans doute compris, ce composant dépend du système, ou **OS
 **NB:** Avant toute installation veillez à importer les sous-modules avec les commandes **git** ci-dessous.
 
 ```bash
-$ cd libeng/
+$ cd JSunchained/
 $ git submodule init
 $ git submodule update
 ```
