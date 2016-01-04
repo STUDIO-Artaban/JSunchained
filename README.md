@@ -8,5 +8,5 @@ En effet, **JavaScript** dépend du navigateur dans lequel l'**HTML** contenant 
 **JS unchained** permet justement de faire tomber ces contraintes, de libérer ce langage, et ce grâce à l'objet **JavaScript** `window.unchained` de la librairie [http://code.jsunchained.com/unchained.js](http://code.jsunchained.com/unchained.js), et à un composant de type **WebView** appelé `UView`.
 
 Comme vous l'aurez sans doute compris, ce composant dépend du système sur lequel vous souhaitez créer votre application. Actuellement, il en existe deux:
-* Android
-* iOS
+* **Android**
+* **iOS**
