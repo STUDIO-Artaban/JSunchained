@@ -1,0 +1,514 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		50F10E061C3B19BE0005E3FA /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 50F10DDD1C3B19BE0005E3FA /* .gitignore */; };
+		50F10E071C3B19BE0005E3FA /* Discover.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50F10DDF1C3B19BE0005E3FA /* Discover.cpp */; };
+		50F10E081C3B19BE0005E3FA /* Discover.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F10DE01C3B19BE0005E3FA /* Discover.h */; };
+		50F10E091C3B19BE0005E3FA /* Video.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50F10DE21C3B19BE0005E3FA /* Video.cpp */; };
+		50F10E0A1C3B19BE0005E3FA /* Video.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F10DE31C3B19BE0005E3FA /* Video.h */; };
+		50F10E0B1C3B19BE0005E3FA /* Core.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50F10DE51C3B19BE0005E3FA /* Core.cpp */; };
+		50F10E0C1C3B19BE0005E3FA /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F10DE61C3B19BE0005E3FA /* Core.h */; };
+		50F10E0D1C3B19BE0005E3FA /* Permission.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50F10DE71C3B19BE0005E3FA /* Permission.cpp */; };
+		50F10E0E1C3B19BE0005E3FA /* Permission.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F10DE81C3B19BE0005E3FA /* Permission.h */; };
+		50F10E0F1C3B19BE0005E3FA /* Reply.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50F10DE91C3B19BE0005E3FA /* Reply.cpp */; };
+		50F10E101C3B19BE0005E3FA /* Reply.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F10DEA1C3B19BE0005E3FA /* Reply.h */; };
+		50F10E111C3B19BE0005E3FA /* Bluetooth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50F10DED1C3B19BE0005E3FA /* Bluetooth.cpp */; };
+		50F10E121C3B19BE0005E3FA /* Bluetooth.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F10DEE1C3B19BE0005E3FA /* Bluetooth.h */; };
+		50F10E131C3B19BE0005E3FA /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50F10DF01C3B19BE0005E3FA /* Camera.cpp */; };
+		50F10E141C3B19BE0005E3FA /* Camera.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F10DF11C3B19BE0005E3FA /* Camera.h */; };
+		50F10E151C3B19BE0005E3FA /* Socket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50F10DF31C3B19BE0005E3FA /* Socket.cpp */; };
+		50F10E161C3B19BE0005E3FA /* Socket.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F10DF41C3B19BE0005E3FA /* Socket.h */; };
+		50F10E171C3B19BE0005E3FA /* Global.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F10DF51C3B19BE0005E3FA /* Global.h */; };
+		50F10E181C3B19BE0005E3FA /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 50F10DF61C3B19BE0005E3FA /* LICENSE */; };
+		50F10E191C3B19BE0005E3FA /* Log.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F10DF81C3B19BE0005E3FA /* Log.h */; };
+		50F10E1A1C3B19BE0005E3FA /* Log.mm in Sources */ = {isa = PBXBuildFile; fileRef = 50F10DF91C3B19BE0005E3FA /* Log.mm */; };
+		50F10E1B1C3B19BE0005E3FA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 50F10DFA1C3B19BE0005E3FA /* README.md */; };
+		50F10E1C1C3B19BE0005E3FA /* Sensors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50F10DFC1C3B19BE0005E3FA /* Sensors.cpp */; };
+		50F10E1D1C3B19BE0005E3FA /* Sensors.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F10DFD1C3B19BE0005E3FA /* Sensors.h */; };
+		50F10E1E1C3B19BE0005E3FA /* Storage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50F10DFF1C3B19BE0005E3FA /* Storage.cpp */; };
+		50F10E1F1C3B19BE0005E3FA /* Storage.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F10E001C3B19BE0005E3FA /* Storage.h */; };
+		50F10E201C3B19BE0005E3FA /* Tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50F10E021C3B19BE0005E3FA /* Tools.cpp */; };
+		50F10E211C3B19BE0005E3FA /* Tools.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F10E031C3B19BE0005E3FA /* Tools.h */; };
+		50F10E221C3B19BE0005E3FA /* Unchained.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50F10E041C3B19BE0005E3FA /* Unchained.cpp */; };
+		50F10E231C3B19BE0005E3FA /* Unchained.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F10E051C3B19BE0005E3FA /* Unchained.h */; };
+		50F10E281C3B22E90005E3FA /* NSResources.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F10E241C3B22E90005E3FA /* NSResources.h */; };
+		50F10E291C3B22E90005E3FA /* NSResources.mm in Sources */ = {isa = PBXBuildFile; fileRef = 50F10E251C3B22E90005E3FA /* NSResources.mm */; };
+		50F10E2A1C3B22E90005E3FA /* UView.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F10E261C3B22E90005E3FA /* UView.h */; };
+		50F10E2B1C3B22E90005E3FA /* UView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 50F10E271C3B22E90005E3FA /* UView.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		50F10DD11C3AE0900005E3FA /* Unchained.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Unchained.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50F10DD61C3AE0900005E3FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50F10DDD1C3B19BE0005E3FA /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		50F10DDF1C3B19BE0005E3FA /* Discover.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Discover.cpp; sourceTree = "<group>"; };
+		50F10DE01C3B19BE0005E3FA /* Discover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Discover.h; sourceTree = "<group>"; };
+		50F10DE21C3B19BE0005E3FA /* Video.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Video.cpp; sourceTree = "<group>"; };
+		50F10DE31C3B19BE0005E3FA /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
+		50F10DE51C3B19BE0005E3FA /* Core.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Core.cpp; sourceTree = "<group>"; };
+		50F10DE61C3B19BE0005E3FA /* Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
+		50F10DE71C3B19BE0005E3FA /* Permission.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Permission.cpp; sourceTree = "<group>"; };
+		50F10DE81C3B19BE0005E3FA /* Permission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Permission.h; sourceTree = "<group>"; };
+		50F10DE91C3B19BE0005E3FA /* Reply.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Reply.cpp; sourceTree = "<group>"; };
+		50F10DEA1C3B19BE0005E3FA /* Reply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reply.h; sourceTree = "<group>"; };
+		50F10DED1C3B19BE0005E3FA /* Bluetooth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bluetooth.cpp; sourceTree = "<group>"; };
+		50F10DEE1C3B19BE0005E3FA /* Bluetooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bluetooth.h; sourceTree = "<group>"; };
+		50F10DF01C3B19BE0005E3FA /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		50F10DF11C3B19BE0005E3FA /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		50F10DF31C3B19BE0005E3FA /* Socket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Socket.cpp; sourceTree = "<group>"; };
+		50F10DF41C3B19BE0005E3FA /* Socket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Socket.h; sourceTree = "<group>"; };
+		50F10DF51C3B19BE0005E3FA /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
+		50F10DF61C3B19BE0005E3FA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		50F10DF81C3B19BE0005E3FA /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
+		50F10DF91C3B19BE0005E3FA /* Log.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Log.mm; sourceTree = "<group>"; };
+		50F10DFA1C3B19BE0005E3FA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		50F10DFC1C3B19BE0005E3FA /* Sensors.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sensors.cpp; sourceTree = "<group>"; };
+		50F10DFD1C3B19BE0005E3FA /* Sensors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sensors.h; sourceTree = "<group>"; };
+		50F10DFF1C3B19BE0005E3FA /* Storage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Storage.cpp; sourceTree = "<group>"; };
+		50F10E001C3B19BE0005E3FA /* Storage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Storage.h; sourceTree = "<group>"; };
+		50F10E021C3B19BE0005E3FA /* Tools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tools.cpp; sourceTree = "<group>"; };
+		50F10E031C3B19BE0005E3FA /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
+		50F10E041C3B19BE0005E3FA /* Unchained.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Unchained.cpp; sourceTree = "<group>"; };
+		50F10E051C3B19BE0005E3FA /* Unchained.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unchained.h; sourceTree = "<group>"; };
+		50F10E241C3B22E90005E3FA /* NSResources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSResources.h; sourceTree = "<group>"; };
+		50F10E251C3B22E90005E3FA /* NSResources.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NSResources.mm; sourceTree = "<group>"; };
+		50F10E261C3B22E90005E3FA /* UView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UView.h; sourceTree = "<group>"; };
+		50F10E271C3B22E90005E3FA /* UView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UView.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		50F10DCD1C3AE0900005E3FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		50F10DC71C3AE0900005E3FA = {
+			isa = PBXGroup;
+			children = (
+				50F10DD31C3AE0900005E3FA /* Unchained */,
+				50F10DD21C3AE0900005E3FA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		50F10DD21C3AE0900005E3FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				50F10DD11C3AE0900005E3FA /* Unchained.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		50F10DD31C3AE0900005E3FA /* Unchained */ = {
+			isa = PBXGroup;
+			children = (
+				50F10E241C3B22E90005E3FA /* NSResources.h */,
+				50F10E251C3B22E90005E3FA /* NSResources.mm */,
+				50F10E261C3B22E90005E3FA /* UView.h */,
+				50F10E271C3B22E90005E3FA /* UView.mm */,
+				50F10DDC1C3B19BE0005E3FA /* Unchained */,
+				50F10DD61C3AE0900005E3FA /* Info.plist */,
+			);
+			path = Unchained;
+			sourceTree = "<group>";
+		};
+		50F10DDC1C3B19BE0005E3FA /* Unchained */ = {
+			isa = PBXGroup;
+			children = (
+				50F10DDD1C3B19BE0005E3FA /* .gitignore */,
+				50F10DDE1C3B19BE0005E3FA /* Bluetooth */,
+				50F10DE11C3B19BE0005E3FA /* Camera */,
+				50F10DE41C3B19BE0005E3FA /* Core */,
+				50F10DEB1C3B19BE0005E3FA /* Features */,
+				50F10DF51C3B19BE0005E3FA /* Global.h */,
+				50F10DF61C3B19BE0005E3FA /* LICENSE */,
+				50F10DF71C3B19BE0005E3FA /* Log */,
+				50F10DFA1C3B19BE0005E3FA /* README.md */,
+				50F10DFB1C3B19BE0005E3FA /* Sensors */,
+				50F10DFE1C3B19BE0005E3FA /* Storage */,
+				50F10E011C3B19BE0005E3FA /* Tools */,
+				50F10E041C3B19BE0005E3FA /* Unchained.cpp */,
+				50F10E051C3B19BE0005E3FA /* Unchained.h */,
+			);
+			path = Unchained;
+			sourceTree = "<group>";
+		};
+		50F10DDE1C3B19BE0005E3FA /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				50F10DDF1C3B19BE0005E3FA /* Discover.cpp */,
+				50F10DE01C3B19BE0005E3FA /* Discover.h */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		50F10DE11C3B19BE0005E3FA /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				50F10DE21C3B19BE0005E3FA /* Video.cpp */,
+				50F10DE31C3B19BE0005E3FA /* Video.h */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		50F10DE41C3B19BE0005E3FA /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				50F10DE51C3B19BE0005E3FA /* Core.cpp */,
+				50F10DE61C3B19BE0005E3FA /* Core.h */,
+				50F10DE71C3B19BE0005E3FA /* Permission.cpp */,
+				50F10DE81C3B19BE0005E3FA /* Permission.h */,
+				50F10DE91C3B19BE0005E3FA /* Reply.cpp */,
+				50F10DEA1C3B19BE0005E3FA /* Reply.h */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		50F10DEB1C3B19BE0005E3FA /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				50F10DEC1C3B19BE0005E3FA /* Bluetooth */,
+				50F10DEF1C3B19BE0005E3FA /* Camera */,
+				50F10DF21C3B19BE0005E3FA /* Internet */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		50F10DEC1C3B19BE0005E3FA /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				50F10DED1C3B19BE0005E3FA /* Bluetooth.cpp */,
+				50F10DEE1C3B19BE0005E3FA /* Bluetooth.h */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		50F10DEF1C3B19BE0005E3FA /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				50F10DF01C3B19BE0005E3FA /* Camera.cpp */,
+				50F10DF11C3B19BE0005E3FA /* Camera.h */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		50F10DF21C3B19BE0005E3FA /* Internet */ = {
+			isa = PBXGroup;
+			children = (
+				50F10DF31C3B19BE0005E3FA /* Socket.cpp */,
+				50F10DF41C3B19BE0005E3FA /* Socket.h */,
+			);
+			path = Internet;
+			sourceTree = "<group>";
+		};
+		50F10DF71C3B19BE0005E3FA /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				50F10DF81C3B19BE0005E3FA /* Log.h */,
+				50F10DF91C3B19BE0005E3FA /* Log.mm */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		50F10DFB1C3B19BE0005E3FA /* Sensors */ = {
+			isa = PBXGroup;
+			children = (
+				50F10DFC1C3B19BE0005E3FA /* Sensors.cpp */,
+				50F10DFD1C3B19BE0005E3FA /* Sensors.h */,
+			);
+			path = Sensors;
+			sourceTree = "<group>";
+		};
+		50F10DFE1C3B19BE0005E3FA /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				50F10DFF1C3B19BE0005E3FA /* Storage.cpp */,
+				50F10E001C3B19BE0005E3FA /* Storage.h */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		50F10E011C3B19BE0005E3FA /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				50F10E021C3B19BE0005E3FA /* Tools.cpp */,
+				50F10E031C3B19BE0005E3FA /* Tools.h */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		50F10DCE1C3AE0900005E3FA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50F10E0A1C3B19BE0005E3FA /* Video.h in Headers */,
+				50F10E281C3B22E90005E3FA /* NSResources.h in Headers */,
+				50F10E191C3B19BE0005E3FA /* Log.h in Headers */,
+				50F10E121C3B19BE0005E3FA /* Bluetooth.h in Headers */,
+				50F10E0C1C3B19BE0005E3FA /* Core.h in Headers */,
+				50F10E141C3B19BE0005E3FA /* Camera.h in Headers */,
+				50F10E081C3B19BE0005E3FA /* Discover.h in Headers */,
+				50F10E0E1C3B19BE0005E3FA /* Permission.h in Headers */,
+				50F10E1D1C3B19BE0005E3FA /* Sensors.h in Headers */,
+				50F10E1F1C3B19BE0005E3FA /* Storage.h in Headers */,
+				50F10E101C3B19BE0005E3FA /* Reply.h in Headers */,
+				50F10E231C3B19BE0005E3FA /* Unchained.h in Headers */,
+				50F10E161C3B19BE0005E3FA /* Socket.h in Headers */,
+				50F10E2A1C3B22E90005E3FA /* UView.h in Headers */,
+				50F10E211C3B19BE0005E3FA /* Tools.h in Headers */,
+				50F10E171C3B19BE0005E3FA /* Global.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		50F10DD01C3AE0900005E3FA /* Unchained */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50F10DD91C3AE0900005E3FA /* Build configuration list for PBXNativeTarget "Unchained" */;
+			buildPhases = (
+				50F10DCC1C3AE0900005E3FA /* Sources */,
+				50F10DCD1C3AE0900005E3FA /* Frameworks */,
+				50F10DCE1C3AE0900005E3FA /* Headers */,
+				50F10DCF1C3AE0900005E3FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Unchained;
+			productName = Unchained;
+			productReference = 50F10DD11C3AE0900005E3FA /* Unchained.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		50F10DC81C3AE0900005E3FA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "STUDIO Artaban";
+				TargetAttributes = {
+					50F10DD01C3AE0900005E3FA = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 50F10DCB1C3AE0900005E3FA /* Build configuration list for PBXProject "Unchained" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 50F10DC71C3AE0900005E3FA;
+			productRefGroup = 50F10DD21C3AE0900005E3FA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				50F10DD01C3AE0900005E3FA /* Unchained */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		50F10DCF1C3AE0900005E3FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50F10E181C3B19BE0005E3FA /* LICENSE in Resources */,
+				50F10E061C3B19BE0005E3FA /* .gitignore in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		50F10DCC1C3AE0900005E3FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50F10E2B1C3B22E90005E3FA /* UView.mm in Sources */,
+				50F10E0D1C3B19BE0005E3FA /* Permission.cpp in Sources */,
+				50F10E0F1C3B19BE0005E3FA /* Reply.cpp in Sources */,
+				50F10E1B1C3B19BE0005E3FA /* README.md in Sources */,
+				50F10E1C1C3B19BE0005E3FA /* Sensors.cpp in Sources */,
+				50F10E131C3B19BE0005E3FA /* Camera.cpp in Sources */,
+				50F10E111C3B19BE0005E3FA /* Bluetooth.cpp in Sources */,
+				50F10E201C3B19BE0005E3FA /* Tools.cpp in Sources */,
+				50F10E1A1C3B19BE0005E3FA /* Log.mm in Sources */,
+				50F10E151C3B19BE0005E3FA /* Socket.cpp in Sources */,
+				50F10E0B1C3B19BE0005E3FA /* Core.cpp in Sources */,
+				50F10E1E1C3B19BE0005E3FA /* Storage.cpp in Sources */,
+				50F10E071C3B19BE0005E3FA /* Discover.cpp in Sources */,
+				50F10E091C3B19BE0005E3FA /* Video.cpp in Sources */,
+				50F10E291C3B22E90005E3FA /* NSResources.mm in Sources */,
+				50F10E221C3B19BE0005E3FA /* Unchained.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		50F10DD71C3AE0900005E3FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		50F10DD81C3AE0900005E3FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		50F10DDA1C3AE0900005E3FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Unchained/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.studio.artaban.Unchained;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		50F10DDB1C3AE0900005E3FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Unchained/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.studio.artaban.Unchained;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		50F10DCB1C3AE0900005E3FA /* Build configuration list for PBXProject "Unchained" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50F10DD71C3AE0900005E3FA /* Debug */,
+				50F10DD81C3AE0900005E3FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50F10DD91C3AE0900005E3FA /* Build configuration list for PBXNativeTarget "Unchained" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50F10DDA1C3AE0900005E3FA /* Debug */,
+				50F10DDB1C3AE0900005E3FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 50F10DC81C3AE0900005E3FA /* Project object */;
+}

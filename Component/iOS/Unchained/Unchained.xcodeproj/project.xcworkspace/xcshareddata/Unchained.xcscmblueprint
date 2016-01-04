@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "BAFE011FD95BE4CD476E337A33A040071F691D9E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "1A1D519D358BD9720EC5D44B5AFB593DDE35C9D6" : 0,
+    "BAFE011FD95BE4CD476E337A33A040071F691D9E" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "FF4B9189-A9BC-4323-807C-0597352540E4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "1A1D519D358BD9720EC5D44B5AFB593DDE35C9D6" : "JSunchained\/Component\/iOS\/Unchained\/Unchained\/Unchained\/",
+    "BAFE011FD95BE4CD476E337A33A040071F691D9E" : "JSunchained\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Unchained",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Component\/iOS\/Unchained\/Unchained.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/v-pascal\/JSunchained.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1A1D519D358BD9720EC5D44B5AFB593DDE35C9D6"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/STUDIO-Artaban\/JSunchained.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BAFE011FD95BE4CD476E337A33A040071F691D9E"
+    }
+  ]
+}
