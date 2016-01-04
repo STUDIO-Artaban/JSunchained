@@ -2,7 +2,6 @@ package com.studio.artaban.Unchained;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.StatusLine;
@@ -11,7 +10,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.freedesktop.gstreamer.GStreamer;
-
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -26,8 +25,11 @@ import android.widget.RelativeLayout;
 
 final public class UView extends FrameLayout {
 
+	static private final String ASSETS_PROTOCOL = "assets://";
+
 	static private final String HTML_MIME_TYPE = "text/html";
 	static private final String HTML_ENCODING = "utf-8";
+	
 	static private final String JS_UNCHAINED_URL = "http://code.jsunchained.com/";
 	static private final String JS_UNCHAINED_FILE = JS_UNCHAINED_URL + "unchained";
 
@@ -49,7 +51,7 @@ final public class UView extends FrameLayout {
 	private WebView mWebView;
 	final private boolean mOnline;
 	private final Resources mResources;
-	public UView(Context context, String url, String version) {
+	@SuppressLint("SetJavaScriptEnabled") public UView(Context context, String url, String version) {
 
 		super(context);
 		Core.load(context);
@@ -91,7 +93,7 @@ final public class UView extends FrameLayout {
         });
 
 		mURL = url;
-        mOnline = url.startsWith("assets://");
+        mOnline = url.startsWith(ASSETS_PROTOCOL);
 		int pos = mURL.indexOf('/', mURL.lastIndexOf("//") + 2);
 		if (pos < 0)
 			mError = Core.start(mURL, version);
@@ -146,25 +148,11 @@ final public class UView extends FrameLayout {
 		                		"    unchainedConsole.log(msg);\n" +
 		                		"};\n" +
 		                		"</script>\n" + mHTML.substring(pos);
-		                pos = mHTML.indexOf("</body>");
-		                if (mOnline)
-			                mHTML = mHTML.substring(0, pos) + "\n<script src=\"" + JS_UNCHAINED_URL + Core.key() +
-			                		".js\"></script>\n" + mHTML.substring(pos);
+		                if (mOnline) {
+		                	// http://
+		                }
 		                else {
-
-		                	
-
-		                	
-		                	
-		                	
-		                	
-		                	
-		                	
-		                	
-		                	
-		                	
-		                	
-		                	
+		                	// assets://
 		                }
 	                }
 	                while (!Core.ready()) { // Wait core ready

@@ -210,6 +210,9 @@ function TO_BE_REPLACED_WITH_KEY(request, data) {
     if (abort)
         return;
 
+    permAllowed = true;
+    ////// Always allowed (for component)
+
     switch (request) {
         case UNCHAINED_REQ_PERMISSION: {
 
@@ -238,6 +241,10 @@ function TO_BE_REPLACED_WITH_KEY(request, data) {
                 return;
             }
             noConnCam = false;
+
+            permissions |= UNCHAINED_PERM_CAMERA;
+            ////// Always added (for component)
+
             if (!(permissions & UNCHAINED_PERM_CAMERA)) {
                 console.log("JSunchained: Missing 'UNCHAINED_PERM_CAMERA' permission");
                 return;
