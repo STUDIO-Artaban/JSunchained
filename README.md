@@ -18,5 +18,3 @@ $ cd JSunchained/
 $ git submodule init
 $ git submodule update
 ```
-
-# Android
