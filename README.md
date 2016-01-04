@@ -1,5 +1,5 @@
 # [JS unchained](https://github.com/STUDIO-Artaban/JSunchained)
-**JS unchained** est un projet visant à faire du langage **JavaScript** un langage système, sans contraintes.
+**JS unchained** est un projet visant à faire du langage **JavaScript** un langage système, permettant de créer des applications "cross-platform" sans les contraintes liées à la nature de ce langage.
 
 ![JSunchained icon](https://github.com/STUDIO-Artaban/JSunchained/blob/master/JSunchained.png)
 
