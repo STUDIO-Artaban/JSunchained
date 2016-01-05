@@ -84,7 +84,10 @@
     return self;
 }
 -(void)alertView:(UIAlertView*)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex {
+    
+#ifndef UNCHAINED_COMPONENT
     unchainedPermission((buttonIndex == 0)? PERMISSION_ACCES_NOT_ALLOWED:PERMISSION_ACCES_ALLOWED);
+#endif
 }
 
 @end
