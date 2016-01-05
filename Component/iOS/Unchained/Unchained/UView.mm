@@ -1,6 +1,6 @@
 //
 //  UIMobappView.m
-//  MobappJS
+//  JSunchained
 //
 //  Created by Pascal Viguié on 02/07/2015.
 //  Copyright (c) 2015 Pascal Viguié. All rights reserved.
