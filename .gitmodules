@@ -1,6 +1,0 @@
-[submodule "Component/Android/Unchained/jni/Unchained"]
-	path = Component/Android/Unchained/jni/Unchained
-	url = https://github.com/v-pascal/JSunchained.git
-[submodule "Component/iOS/Unchained/Unchained/Unchained"]
-	path = Component/iOS/Unchained/Unchained/Unchained
-	url = https://github.com/v-pascal/JSunchained.git
