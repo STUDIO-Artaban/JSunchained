@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50E8230C1C3BF0C200910FC7 /* boost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E8230B1C3BF0C200910FC7 /* boost.framework */; };
+		50E8230F1C3BF21200910FC7 /* GStreamer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E8230E1C3BF21200910FC7 /* GStreamer.framework */; };
+		50E823111C3BF26C00910FC7 /* libGST.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E823101C3BF26C00910FC7 /* libGST.framework */; };
 		50F10E061C3B19BE0005E3FA /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 50F10DDD1C3B19BE0005E3FA /* .gitignore */; };
 		50F10E071C3B19BE0005E3FA /* Discover.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50F10DDF1C3B19BE0005E3FA /* Discover.cpp */; };
 		50F10E081C3B19BE0005E3FA /* Discover.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F10DE01C3B19BE0005E3FA /* Discover.h */; };
@@ -39,11 +42,14 @@
 		50F10E231C3B19BE0005E3FA /* Unchained.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F10E051C3B19BE0005E3FA /* Unchained.h */; };
 		50F10E281C3B22E90005E3FA /* NSResources.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F10E241C3B22E90005E3FA /* NSResources.h */; };
 		50F10E291C3B22E90005E3FA /* NSResources.mm in Sources */ = {isa = PBXBuildFile; fileRef = 50F10E251C3B22E90005E3FA /* NSResources.mm */; };
-		50F10E2A1C3B22E90005E3FA /* UView.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F10E261C3B22E90005E3FA /* UView.h */; };
+		50F10E2A1C3B22E90005E3FA /* UView.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F10E261C3B22E90005E3FA /* UView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50F10E2B1C3B22E90005E3FA /* UView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 50F10E271C3B22E90005E3FA /* UView.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50E8230B1C3BF0C200910FC7 /* boost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = boost.framework; path = ../../../../../Builds/boost/ios/framework/boost.framework; sourceTree = "<group>"; };
+		50E8230E1C3BF21200910FC7 /* GStreamer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GStreamer.framework; path = ../../../../../Library/Developer/GStreamer/iPhone.sdk/GStreamer.framework; sourceTree = "<group>"; };
+		50E823101C3BF26C00910FC7 /* libGST.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libGST.framework; path = "../../../../../Builds/libGST/Build/Products/Release-iphoneos/libGST.framework"; sourceTree = "<group>"; };
 		50F10DD11C3AE0900005E3FA /* Unchained.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Unchained.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F10DD61C3AE0900005E3FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50F10DDD1C3B19BE0005E3FA /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -87,15 +93,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50E823111C3BF26C00910FC7 /* libGST.framework in Frameworks */,
+				50E8230F1C3BF21200910FC7 /* GStreamer.framework in Frameworks */,
+				50E8230C1C3BF0C200910FC7 /* boost.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50E8230D1C3BF0C700910FC7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50E823101C3BF26C00910FC7 /* libGST.framework */,
+				50E8230E1C3BF21200910FC7 /* GStreamer.framework */,
+				50E8230B1C3BF0C200910FC7 /* boost.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		50F10DC71C3AE0900005E3FA = {
 			isa = PBXGroup;
 			children = (
+				50E8230D1C3BF0C700910FC7 /* Frameworks */,
 				50F10DD31C3AE0900005E3FA /* Unchained */,
 				50F10DD21C3AE0900005E3FA /* Products */,
 			);
@@ -254,6 +274,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50F10E2A1C3B22E90005E3FA /* UView.h in Headers */,
 				50F10E0A1C3B19BE0005E3FA /* Video.h in Headers */,
 				50F10E281C3B22E90005E3FA /* NSResources.h in Headers */,
 				50F10E191C3B19BE0005E3FA /* Log.h in Headers */,
@@ -267,7 +288,6 @@
 				50F10E101C3B19BE0005E3FA /* Reply.h in Headers */,
 				50F10E231C3B19BE0005E3FA /* Unchained.h in Headers */,
 				50F10E161C3B19BE0005E3FA /* Socket.h in Headers */,
-				50F10E2A1C3B22E90005E3FA /* UView.h in Headers */,
 				50F10E211C3B19BE0005E3FA /* Tools.h in Headers */,
 				50F10E171C3B19BE0005E3FA /* Global.h in Headers */,
 			);
@@ -455,15 +475,33 @@
 		50F10DDA1C3AE0900005E3FA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++98";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_OBJC_ARC = NO;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Pascal/Builds/boost/ios/framework,
+					"/Users/Pascal/Builds/libGST/Build/Products/Release-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/GStreamer/iPhone.sdk",
+				);
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				HEADER_SEARCH_PATHS = "$(USER_LIBRARY_DIR)/Developer/GStreamer/iPhone.sdk/GStreamer.framework/Headers";
 				INFOPLIST_FILE = Unchained/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-DDEBUG",
+					"-fexceptions",
+					"-Wmultichar",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.studio.artaban.Unchained;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -473,15 +511,35 @@
 		50F10DDB1C3AE0900005E3FA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++98";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_OBJC_ARC = NO;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Pascal/Builds/boost/ios/framework,
+					"/Users/Pascal/Builds/libGST/Build/Products/Release-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/GStreamer/iPhone.sdk",
+				);
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				HEADER_SEARCH_PATHS = "$(USER_LIBRARY_DIR)/Developer/GStreamer/iPhone.sdk/GStreamer.framework/Headers";
 				INFOPLIST_FILE = Unchained/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-DNDEBUG",
+					"-ffunction-sections",
+					"-fdata-sections",
+					"-Wmultichar",
+					"-fvisibility=hidden",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.studio.artaban.Unchained;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -507,6 +565,7 @@
 				50F10DDB1C3AE0900005E3FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
