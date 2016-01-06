@@ -16,5 +16,5 @@ Comme vous l'aurez sans doute compris, ce composant dépend de l'**OS** sur lequ
 ```bash
 $ cd JSunchained/
 $ git submodule init
-$ git submodule update
+$ git submodule update --remote
 ```
