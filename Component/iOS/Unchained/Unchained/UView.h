@@ -1,5 +1,5 @@
 //
-//  UIMobappView.h
+//  UView.h
 //  JSunchained
 //
 //  Created by Pascal Viguié on 02/07/2015.

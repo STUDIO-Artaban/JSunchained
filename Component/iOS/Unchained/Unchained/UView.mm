@@ -1,5 +1,5 @@
 //
-//  UIMobappView.m
+//  UView.m
 //  JSunchained
 //
 //  Created by Pascal Viguié on 02/07/2015.
@@ -69,7 +69,7 @@ NSString* deviceName() {
     return self;
 }
 
--(void)initWithVersion:(NSString *)version {
+-(void)initWithVersion:(NSString*)version {
 
     replyHTML = nil;
     connHTTP = nil;
@@ -183,7 +183,7 @@ NSString* deviceName() {
         connHTTP = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     else {
 
-        NSLog(@"ERROR: Failed to start 'MobappJS' core - %d", self.Error);
+        NSLog(@"ERROR: Failed to start 'JSunchained' core - %d", self.Error);
         [super loadRequest:request];
     }
 }
@@ -208,7 +208,6 @@ NSString* deviceName() {
 -(BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request
                                     navigationType:(UIWebViewNavigationType)navigationType {
     if (loading) {
-
         loading = FALSE;
         return YES;
     }
@@ -249,13 +248,13 @@ NSString* deviceName() {
 
         pos = [html rangeOfString:@"<head>"];
         [html insertString:@"\n<script>\n"
-         "window.requestMobapp = function() { };\n"
+         "window.requestUnchained = function() { };\n"
          "</script>" atIndex:pos.location + 6];
-        pos = [html rangeOfString:@"</body>"];
-        NSString* jsURL = [[NSString alloc] initWithFormat:@"<script src=\"%s%s.js\"></script>\n",
-                           JS_UNCHAINED_URL, unchainedKey()];
-        [html insertString:jsURL atIndex:pos.location];
-        [jsURL release];
+        //pos = [html rangeOfString:@"</body>"];
+        //NSString* jsURL = [[NSString alloc] initWithFormat:@"<script src=\"%s%s.js\"></script>\n",
+        //                   JS_UNCHAINED_URL, unchainedKey()];
+        //[html insertString:jsURL atIndex:pos.location];
+        //[jsURL release];
     }
     while (!unchainedReady())
         [NSThread sleepForTimeInterval:.1];
