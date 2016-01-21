@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tga;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Unchained">
+      <UniqueIdentifier>{e3113db3-4b15-4f32-80e8-1496e3f9fbe3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Unchained\Bluetooth">
+      <UniqueIdentifier>{bf22428c-3c3c-4ca7-89a7-52574e2a6318}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Unchained\Camera">
+      <UniqueIdentifier>{a06735ab-3f3a-4a76-955d-1b0518fe6669}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Unchained\Core">
+      <UniqueIdentifier>{32880f5f-b420-4c2e-84a5-baadfa73ac1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Unchained\Features">
+      <UniqueIdentifier>{794d8ccf-3af3-4369-a4b3-32754a2acf95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Unchained\Features\Bluetooth">
+      <UniqueIdentifier>{0f8d1895-9d98-45de-b81a-a6583ed37b2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Unchained\Log">
+      <UniqueIdentifier>{42f7a50d-5fe3-480a-921a-c195c971a1bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Unchained\Sensors">
+      <UniqueIdentifier>{1bb66f70-b02a-42db-8656-8e5d5c9de288}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Unchained\Storage">
+      <UniqueIdentifier>{64d98648-fce1-45f6-9f70-a19f800cb546}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Unchained\Tools">
+      <UniqueIdentifier>{b6f2b69d-dc3c-4d8d-9a9b-a7d797170160}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Unchained\Features\Camera">
+      <UniqueIdentifier>{be1a0ae2-32b6-4a36-8f05-3e0f92390fb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Unchained\Features\Internet">
+      <UniqueIdentifier>{9e7a2f67-c64a-404f-a921-bbdf5401fec5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="Unchained\Unchained.cpp">
+      <Filter>Unchained</Filter>
+    </ClCompile>
+    <ClCompile Include="Unchained\Bluetooth\Discover.cpp">
+      <Filter>Unchained\Bluetooth</Filter>
+    </ClCompile>
+    <ClCompile Include="Unchained\Camera\Video.cpp">
+      <Filter>Unchained\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Unchained\Core\Core.cpp">
+      <Filter>Unchained\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Unchained\Core\Permission.cpp">
+      <Filter>Unchained\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Unchained\Core\Reply.cpp">
+      <Filter>Unchained\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Unchained\Features\Bluetooth\Bluetooth.cpp">
+      <Filter>Unchained\Features\Bluetooth</Filter>
+    </ClCompile>
+    <ClCompile Include="Unchained\Features\Camera\Camera.cpp">
+      <Filter>Unchained\Features\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Unchained\Features\Internet\Socket.cpp">
+      <Filter>Unchained\Features\Internet</Filter>
+    </ClCompile>
+    <ClCompile Include="Unchained\Tools\Tools.cpp">
+      <Filter>Unchained\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Unchained\Storage\Storage.cpp">
+      <Filter>Unchained\Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="Unchained\Sensors\Sensors.cpp">
+      <Filter>Unchained\Sensors</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="Unchained\Global.h">
+      <Filter>Unchained</Filter>
+    </ClInclude>
+    <ClInclude Include="Unchained\Unchained.h">
+      <Filter>Unchained</Filter>
+    </ClInclude>
+    <ClInclude Include="Unchained\Bluetooth\Discover.h">
+      <Filter>Unchained\Bluetooth</Filter>
+    </ClInclude>
+    <ClInclude Include="Unchained\Camera\Video.h">
+      <Filter>Unchained\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Unchained\Core\Core.h">
+      <Filter>Unchained\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Unchained\Core\Permission.h">
+      <Filter>Unchained\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Unchained\Core\Reply.h">
+      <Filter>Unchained\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Unchained\Features\Bluetooth\Bluetooth.h">
+      <Filter>Unchained\Features\Bluetooth</Filter>
+    </ClInclude>
+    <ClInclude Include="Unchained\Features\Camera\Camera.h">
+      <Filter>Unchained\Features\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Unchained\Features\Internet\Socket.h">
+      <Filter>Unchained\Features\Internet</Filter>
+    </ClInclude>
+    <ClInclude Include="Unchained\Log\Log.h">
+      <Filter>Unchained\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="Unchained\Tools\Tools.h">
+      <Filter>Unchained\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Unchained\Storage\Storage.h">
+      <Filter>Unchained\Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="Unchained\Sensors\Sensors.h">
+      <Filter>Unchained\Sensors</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

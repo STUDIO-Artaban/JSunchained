@@ -7,6 +7,7 @@
 *.dex
 *.ap_
 ._*
+*.sdf
 
 /Component/Android/Unchained/obj
 /Component/Android/Unchained/gen
@@ -18,3 +19,19 @@
 
 /Component/iOS/Unchained/Build
 /Component/iOS/libGST/Build
+
+/Component/Windows/JSunchained/.vs
+/Component/Windows/JSunchained/Debug
+/Component/Windows/JSunchained/ipch
+/Component/Windows/JSunchained/obj
+/Component/Windows/JSunchained/packages
+/Component/Windows/JSunchained/x64
+/Component/Windows/JSunchained/JSunchained/Generated Files
+/Component/Windows/JSunchained/JSunchained/x64
+/Component/Windows/JSunchained/Unchained/bin
+/Component/Windows/JSunchained/Unchained/obj
+
+/Test/Windows/YourSiteApp/.vs
+/Test/Windows/YourSiteApp/obj
+/Test/Windows/YourSiteApp/YourSiteApp/bin
+/Test/Windows/YourSiteApp/YourSiteApp/obj
