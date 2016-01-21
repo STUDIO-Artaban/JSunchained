@@ -10,6 +10,7 @@ En effet, **JavaScript** dépend du navigateur dans lequel l'**HTML** contenant 
 Comme vous l'aurez sans doute compris, ce composant dépend de l'**OS** sur lequel vous souhaitez créer votre application. Actuellement il en existe deux:
 * [Android](https://github.com/STUDIO-Artaban/JSunchained/tree/master/Component/Android)
 * [iOS](https://github.com/STUDIO-Artaban/JSunchained/tree/master/Component/iOS)
+* [Windows](https://github.com/STUDIO-Artaban/JSunchained/tree/master/Component/Windows) (UWP)
 
 **NB:** Avant toute installation veillez à importer les sous-modules avec les commandes **git** ci-dessous.
 
