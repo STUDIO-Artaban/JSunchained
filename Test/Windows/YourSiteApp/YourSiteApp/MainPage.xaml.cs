@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,7 +27,17 @@ namespace YourSiteApp
         public MainPage()
         {
             this.InitializeComponent();
-            App.uView.InitializeComponent();
+
+            this.Content = App.uView.Panel;
+            App.uView.Load("http://www.google.fr", null);
+
+            this.SizeChanged += OnSizeChanged;
+        }
+
+        private void OnSizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            App.uView.Height = this.ActualHeight;
+            App.uView.Width = this.ActualWidth;
         }
     }
 }

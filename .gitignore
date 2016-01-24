@@ -32,6 +32,9 @@
 /Component/Windows/JSunchained/Unchained/obj
 
 /Test/Windows/YourSiteApp/.vs
+/Test/Windows/YourSiteApp/edgehtml.pdb
 /Test/Windows/YourSiteApp/obj
 /Test/Windows/YourSiteApp/YourSiteApp/bin
 /Test/Windows/YourSiteApp/YourSiteApp/obj
+/Test/Windows/YourSiteApp/YourPhoneApp/bin
+/Test/Windows/YourSiteApp/YourPhoneApp/obj

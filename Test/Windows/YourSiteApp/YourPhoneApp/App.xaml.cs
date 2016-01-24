@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -13,18 +14,19 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
-using Unchained;
+// Pour plus d'informations sur le modèle Application vide, consultez la page http://go.microsoft.com/fwlink/?LinkId=391641
 
-namespace YourSiteApp
+namespace YourPhoneApp
 {
     /// <summary>
     /// Fournit un comportement spécifique à l'application afin de compléter la classe Application par défaut.
     /// </summary>
-    sealed partial class App : Application
+    public sealed partial class App : Application
     {
-        public static UView uView;
+        private TransitionCollection transitions;
 
         /// <summary>
         /// Initialise l'objet d'application de singleton.  Il s'agit de la première ligne du code créé
@@ -33,21 +35,26 @@ namespace YourSiteApp
         public App()
         {
             this.InitializeComponent();
-            this.Suspending += OnSuspending;
+            this.Suspending += this.OnSuspending;
 
-            uView = new UView();
-            this.Suspending += uView.Suspending;
-            this.Resuming += uView.Resuming;
+
+
+
+            //Debug.WriteLine("App");
+
+
+
+
         }
 
         /// <summary>
         /// Invoqué lorsque l'application est lancée normalement par l'utilisateur final.  D'autres points d'entrée
-        /// seront utilisés par exemple au moment du lancement de l'application pour l'ouverture d'un fichier spécifique.
+        /// sont utilisés lorsque l'application est lancée pour ouvrir un fichier spécifique, pour afficher
+        /// des résultats de recherche, etc.
         /// </summary>
         /// <param name="e">Détails concernant la requête et le processus de lancement.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
             {
@@ -64,11 +71,24 @@ namespace YourSiteApp
                 // Créez un Frame utilisable comme contexte de navigation et naviguez jusqu'à la première page
                 rootFrame = new Frame();
 
-                rootFrame.NavigationFailed += OnNavigationFailed;
+                // TODO: modifier cette valeur à une taille de cache qui contient à votre application
+                rootFrame.CacheSize = 1;
+
+                // Définir la page par défaut
+                rootFrame.Language = Windows.Globalization.ApplicationLanguages.Languages[0];
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
-                    //TODO: chargez l'état de l'application précédemment suspendue
+                    // TODO: chargez l'état de l'application précédemment suspendue
+
+
+
+
+                    Debug.WriteLine("OnLaunched (Resume)");
+
+
+
+
                 }
 
                 // Placez le frame dans la fenêtre active
@@ -77,23 +97,51 @@ namespace YourSiteApp
 
             if (rootFrame.Content == null)
             {
+                // Supprime la navigation tourniquet pour le démarrage.
+                if (rootFrame.ContentTransitions != null)
+                {
+                    this.transitions = new TransitionCollection();
+                    foreach (var c in rootFrame.ContentTransitions)
+                    {
+                        this.transitions.Add(c);
+                    }
+                }
+
+                rootFrame.ContentTransitions = null;
+                rootFrame.Navigated += this.RootFrame_FirstNavigated;
+
                 // Quand la pile de navigation n'est pas restaurée, accédez à la première page,
                 // puis configurez la nouvelle page en transmettant les informations requises en tant que
                 // paramètre
-                rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                if (!rootFrame.Navigate(typeof(MainPage), e.Arguments))
+                {
+                    throw new Exception("Failed to create initial page");
+                }
             }
+
             // Vérifiez que la fenêtre actuelle est active
             Window.Current.Activate();
+
+
+
+
+            Debug.WriteLine("OnLaunched");
+
+
+
+
         }
 
         /// <summary>
-        /// Appelé lorsque la navigation vers une page donnée échoue
+        /// Restaure les transitions de contenu une fois l'application lancée.
         /// </summary>
-        /// <param name="sender">Frame à l'origine de l'échec de navigation.</param>
-        /// <param name="e">Détails relatifs à l'échec de navigation</param>
-        void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
+        /// <param name="sender">Objet où le gestionnaire est attaché.</param>
+        /// <param name="e">Détails sur l'événement de navigation.</param>
+        private void RootFrame_FirstNavigated(object sender, NavigationEventArgs e)
         {
-            throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
+            var rootFrame = sender as Frame;
+            rootFrame.ContentTransitions = this.transitions ?? new TransitionCollection() { new NavigationThemeTransition() };
+            rootFrame.Navigated -= this.RootFrame_FirstNavigated;
         }
 
         /// <summary>
@@ -106,8 +154,18 @@ namespace YourSiteApp
         private void OnSuspending(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral();
-            //TODO: enregistrez l'état de l'application et arrêtez toute activité en arrière-plan
+
+            // TODO: enregistrez l'état de l'application et arrêtez toute activité en arrière-plan
             deferral.Complete();
+
+
+
+
+            Debug.WriteLine("OnSuspending");
+
+
+
+
         }
     }
 }

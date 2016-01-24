@@ -1,9 +1,10 @@
-﻿using System.Runtime.InteropServices;
-
+﻿using System;
+using System.Runtime.InteropServices;
 using Windows.ApplicationModel;
-using Windows.ApplicationModel.Activation;
 
 using Unchained.Features;
+using Windows.UI.Xaml.Controls;
+using Windows.Foundation;
 
 namespace Unchained
 {
@@ -11,80 +12,44 @@ namespace Unchained
     {
         public UView()
         {
-            Log.WriteV();
+            Log.WriteV(" - UView");
 
-            _camera = new Camera();
+            _relativePanel = new RelativePanel();
+            _webView = new WebView();
+            _camera = new Camera(_relativePanel);
+
+            _relativePanel.Children.Add(_webView);
 
             PlatformData platformData = new PlatformData();
             platformData.startCam = _camera.Start;
             platformData.stopCam = _camera.Stop;
-            unchainedInit(platformData);
-
-
-
-
-            /*
-            Debug.WriteLine("UView: Constructor");
             try
             {
-                unchainedStop();
+                unchainedInit(platformData);
             }
-            catch (DllNotFoundException e) { Debug.WriteLine(e.Message); }
-            Debug.WriteLine("UView: DONE");
-            */
-
-            /* Debug.WriteLine(String.Format("ResultA: {0}", Camera.Instance.test.ToString()));
-
-
-            
-
-            Debug.WriteLine("UView: Constructor");
-            try {
-                int res = unchainedReady();
-                Debug.WriteLine(String.Format("ResultB: {0}", res.ToString()));
+            catch (DllNotFoundException e)
+            {
+                Log.WriteF(e.Message);
             }
-            catch (DllNotFoundException e) { Debug.WriteLine(e.Message); }
-
-
-
-            Debug.WriteLine(String.Format("ResultC: {0}", Camera.Instance.test.ToString()));
-            */
-
-
-            /* test = 999;
-
-            startCamFunc myCallBack = new startCamFunc(Start);
-            unchainedTest(myCallBack);
-            */
-
-
-
-
         }
 
-        ////// Application
-        public void InitializeComponent()
+        ////// Tools
+        public void Load(String url, String version)
         {
-            Log.WriteV();
+
+
+
+
+
+            _webView.Navigate(new Uri(url));
+
+
+
 
 
 
         }
-        public void OnLaunched(LaunchActivatedEventArgs e)
-        {
-            Log.WriteV(string.Format(" - e:{0}", e.ToString()));
-
-
-
-        }
-        public void OnSuspending(object sender, SuspendingEventArgs e)
-        {
-            Log.WriteV(string.Format(" - s:{0};e:{1}", sender.ToString(), e.ToString()));
-
-
-
-        }
-
+        
         ////// Core
         [StructLayout(LayoutKind.Sequential)]
         public struct PlatformData
@@ -121,6 +86,44 @@ namespace Unchained
 
 
 
+
+
+        ////// UI element
+        private static WebView _webView;
+        public double Width
+        {
+            get { return _webView.Width; }
+            set { _webView.Width = value; }
+        }
+        public double Height
+        {
+            get { return _webView.Height; }
+            set { _webView.Height = value; }
+        }
+
+        private RelativePanel _relativePanel;
+        public RelativePanel Panel
+        {
+            get { return _relativePanel; }
+        }
+
+        ////// Application
+        public void Suspending(object sender, SuspendingEventArgs e)
+        {
+            Log.WriteV(string.Format(" - s:{0};e:{1}", sender.ToString(), e.ToString()));
+
+
+
+
+        }
+        public void Resuming(object sender, object o)
+        {
+            Log.WriteV(string.Format(" - s:{0};o:{1}", sender.ToString(), o.ToString()));
+
+
+
+
+        }
 
         ////// Resources
         private Camera _camera;
