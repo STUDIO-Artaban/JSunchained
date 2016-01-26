@@ -28,8 +28,9 @@ namespace YourSiteApp
         {
             this.InitializeComponent();
 
-            this.Content = App.uView.Panel;
-            App.uView.Load("http://www.google.fr", null);
+            this.Content = App.uView.Control;
+            App.uView.Load("http://www.jsunchained.com/demo.html", null);
+            //App.uView.Load("https://www.google.fr", null);
 
             this.SizeChanged += OnSizeChanged;
         }

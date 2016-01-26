@@ -26,6 +26,7 @@
 /Component/Windows/JSunchained/obj
 /Component/Windows/JSunchained/packages
 /Component/Windows/JSunchained/x64
+/Component/Windows/JSunchained/JSunchained/Debug
 /Component/Windows/JSunchained/JSunchained/Generated Files
 /Component/Windows/JSunchained/JSunchained/x64
 /Component/Windows/JSunchained/Unchained/bin
@@ -36,5 +37,3 @@
 /Test/Windows/YourSiteApp/obj
 /Test/Windows/YourSiteApp/YourSiteApp/bin
 /Test/Windows/YourSiteApp/YourSiteApp/obj
-/Test/Windows/YourSiteApp/YourPhoneApp/bin
-/Test/Windows/YourSiteApp/YourPhoneApp/obj

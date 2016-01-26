@@ -7,6 +7,14 @@ using Windows.Media.Capture;
 using Windows.Devices.Enumeration;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml;
+using Windows.Media.MediaProperties;
+using Windows.Media;
+using Windows.Graphics.Imaging;
+using Windows.Foundation;
+using Windows.UI.Xaml.Media.Imaging;
+using System.IO;
+using System.Runtime.InteropServices.WindowsRuntime;
+using System.Runtime.InteropServices;
 
 namespace Unchained.Features
 {
@@ -18,38 +26,68 @@ namespace Unchained.Features
     {
         public Camera(RelativePanel panel)
         {
-            Log.WriteV(" - Camera");
+            Log.WriteV(this.GetType().Name);
 
             // Create and add UI capture element to the relative panel
-            _captureElement = new CaptureElement();
+            _captureElement = new CaptureElement
+            {
+                HorizontalAlignment = HorizontalAlignment.Left,
+                VerticalAlignment = VerticalAlignment.Top,
+                MaxWidth = 1,
+                MaxHeight = 1,
+            };
             panel.Children.Add(_captureElement);
         }
 
         private MediaCapture _mediaCapture;
         private CaptureElement _captureElement;
 
-        public async Task<bool> Initialize()
+        public async Task<bool> Initialize(short width, short height)
         {
-            Log.WriteV();
+            Log.WriteV(this.GetType().Name);
             if (_mediaCapture == null)
             {
-                // Attempt to get the back camera if one is available, but use any camera device if not
-
-                // Get available devices for capturing pictures
+                // Attempt to get the default camera if one is available
                 var allVideoDevices = await DeviceInformation.FindAllAsync(DeviceClass.VideoCapture);
 
-                // Get the default camera
                 var cameraDevice = allVideoDevices.FirstOrDefault();
-
                 if (cameraDevice == null)
                 {
-                    Log.WriteE(" - No camera device found!");
+                    Log.WriteE(this.GetType().Name, " - No camera device found!");
                     return false;
                 }
 
+
+
+
+
+
+
+
+                /* Get camera according expected resolution
+
+                // Get information about the preview
+                var previewProperties = _mediaCapture.VideoDeviceController.GetMediaStreamProperties(MediaStreamType.VideoPreview) as VideoEncodingProperties;
+
+                IMediaEncodingProperties properties = _mediaCapture.VideoDeviceController.GetAvailableMediaStreamProperties(MediaStreamType.VideoPreview).FirstOrDefault();
+                (properties as VideoEncodingProperties).Width = (uint)width;
+                (properties as VideoEncodingProperties).Height = (uint)height;
+
+                await _mediaCapture.VideoDeviceController.SetMediaStreamPropertiesAsync(MediaStreamType.VideoPreview, properties);
+                */
+
+
+
+
+
+
                 // Create MediaCapture and its settings
                 _mediaCapture = new MediaCapture();
-                var settings = new MediaCaptureInitializationSettings { VideoDeviceId = cameraDevice.Id };
+                var settings = new MediaCaptureInitializationSettings
+                {
+                    VideoDeviceId = cameraDevice.Id,
+                    StreamingCaptureMode = StreamingCaptureMode.Video
+                };
 
                 // Initialize MediaCapture
                 try
@@ -58,18 +96,21 @@ namespace Unchained.Features
                 }
                 catch (UnauthorizedAccessException)
                 {
-                    Log.WriteF(" - The app was denied access to the camera");
+                    Log.WriteF(this.GetType().Name, " - The app was denied access to the camera");
+                    _mediaCapture = null;
                     return false;
                 }
             }
             return true;
         }
 
+        private Task _previewTask;
+        private bool _running;
         public async Task<bool> Start(char device, short width, short height)
         {
-            Log.WriteV(String.Format(" - d:{0};w:{1};h:{2}", device, width, height));
+            Log.WriteV(this.GetType().Name, String.Format(" - d:{0};w:{1};h:{2}", (int)device, width, height));
 
-            if (!await Initialize())
+            if (!await Initialize(width, height))
                 return false;
 
             // Set the preview source in the UI and mirror it if necessary
@@ -79,98 +120,49 @@ namespace Unchained.Features
             // Start the preview
             await _mediaCapture.StartPreviewAsync();
 
-
-
-            /*
-            // Get information about the preview
-            var previewProperties = _mediaCapture.VideoDeviceController.GetMediaStreamProperties(MediaStreamType.VideoPreview) as VideoEncodingProperties;
-
-            // Create the video frame to request a SoftwareBitmap preview frame
-            var videoFrame = new VideoFrame(BitmapPixelFormat.Rgba8, (int)previewProperties.Width, (int)previewProperties.Height);
-
-            // Capture the preview frame
-            using (var currentFrame = await _mediaCapture.GetPreviewFrameAsync(videoFrame))
+            _running = true;
+            _previewTask = new Task(async () =>
             {
-                // Collect the resulting frame
-                SoftwareBitmap previewFrame = currentFrame.SoftwareBitmap;
+                Windows.Storage.Streams.Buffer data = new Windows.Storage.Streams.Buffer((uint)(width * height * 4));
+                MemoryStream memory = new MemoryStream((int)(width * height * 4));
 
 
-
-                Debug.WriteLine(String.Format("{0}x{1} {2}", previewFrame.PixelWidth, previewFrame.PixelHeight, previewFrame.BitmapPixelFormat));
-
-
-
-            }
-            */
-
-
-
-
-
-            /*
-            private unsafe void EditPixels(SoftwareBitmap bitmap)
-            {
-                // Effect is hard-coded to operate on BGRA8 format only
-                if (bitmap.BitmapPixelFormat == BitmapPixelFormat.Bgra8)
+                while (_running)
                 {
-                    // In BGRA8 format, each pixel is defined by 4 bytes
-                    const int BYTES_PER_PIXEL = 4;
+                    // Create the video frame to request a SoftwareBitmap preview frame
+                    var videoFrame = new VideoFrame(BitmapPixelFormat.Rgba8, (int)width, (int)height);
 
-                    using (var buffer = bitmap.LockBuffer(BitmapBufferAccessMode.ReadWrite))
-                    using (var reference = buffer.CreateReference())
+                    using (var currentFrame = await _mediaCapture.GetPreviewFrameAsync(videoFrame))
                     {
-                        // Get a pointer to the pixel buffer
-                        byte* data;
-                        uint capacity;
-                        ((IMemoryBufferByteAccess)reference).GetBuffer(out data, out capacity);
+                        // Collect the resulting frame
+                        currentFrame.SoftwareBitmap.CopyToBuffer(data);
+                        data.AsStream().CopyTo(memory);
 
-                        // Get information about the BitmapBuffer
-                        var desc = buffer.GetPlaneDescription(0);
-
-                        // Iterate over all pixels
-                        for (uint row = 0; row < desc.Height; row++)
-                        {
-                            for (uint col = 0; col < desc.Width; col++)
-                            {
-                                // Index of the current pixel in the buffer (defined by the next 4 bytes, BGRA8)
-                                var currPixel = desc.StartIndex + desc.Stride * row + BYTES_PER_PIXEL * col;
-
-                                // Read the current pixel information into b,g,r channels (leave out alpha channel)
-                                var b = data[currPixel + 0]; // Blue
-                                var g = data[currPixel + 1]; // Green
-                                var r = data[currPixel + 2]; // Red
-
-                                // Boost the green channel, leave the other two untouched
-                                data[currPixel + 0] = b;
-                                data[currPixel + 1] = (byte)Math.Min(g + 80, 255);
-                                data[currPixel + 2] = r;
-                            }
-                        }
+                        unchainedCamera(memory.ToArray());
                     }
                 }
-            }
-            */
-
-
-
-
-
-
-
-
-
-
+            }, TaskCreationOptions.None);
+            _previewTask.Start();
             return true;
         }
 
         public async Task<bool> Stop()
         {
-            Log.WriteV();
+            Log.WriteV(this.GetType().Name);
 
+            if (!_running)
+                return false;
 
+            _running = false;
+            await _previewTask;
 
-
+            await _mediaCapture.StopPreviewAsync();
             return true;
         }
+
+        ////// Core
+        [DllImport("JSunchained.dll", CallingConvention = CallingConvention.Cdecl)]
+        private static extern void unchainedCamera(byte[] data);
+
     }
 }

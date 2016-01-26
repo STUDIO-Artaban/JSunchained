@@ -15,6 +15,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+// Pour plus d'informations sur le modèle Application vide, consultez la page http://go.microsoft.com/fwlink/?LinkId=391641
+
 using Unchained;
 
 namespace YourSiteApp
@@ -36,8 +38,6 @@ namespace YourSiteApp
             this.Suspending += OnSuspending;
 
             uView = new UView();
-            this.Suspending += uView.Suspending;
-            this.Resuming += uView.Resuming;
         }
 
         /// <summary>

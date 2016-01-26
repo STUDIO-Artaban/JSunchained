@@ -1,4 +1,4 @@
-REM IN x64 DEBUG MODE ONLY
+REM IN x64 DEBUG MODE #####################################################
 
 SET YourSiteAppPath="D:\Dev\YourSiteApp\YourSiteApp\bin\x64\Debug\AppX"
 

@@ -128,7 +128,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Unchained">
+    <Reference Include="Unchained, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\JSunchained\Unchained\bin\x64\Debug\Unchained.dll</HintPath>
     </Reference>
   </ItemGroup>

@@ -101,6 +101,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <GenerateManifest>false</GenerateManifest>
     <IgnoreImportLibrary>false</IgnoreImportLibrary>
+    <IncludePath>D:\Dev\boost_1_59_0;C:\gstreamer\1.0\x86\include\gstreamer-1.0;C:\gstreamer\1.0\x86\lib\gstreamer-1.0\include;C:\gstreamer\1.0\x86\include\glib-2.0;C:\gstreamer\1.0\x86\lib\glib-2.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Dev\boost_1_59_0\lib32-msvc-14.0;C:\gstreamer\1.0\x86\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <GenerateManifest>false</GenerateManifest>
@@ -126,13 +128,15 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <CompileAsWinRT>false</CompileAsWinRT>
+      <PreprocessorDefinitions>UNCHAINED_EXPORTS;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+      <AdditionalDependencies>C:\Program Files (x86)\Windows Kits\8.1\Lib\winv6.3\um\x86\kernel32.Lib;C:\gstreamer\1.0\x86\lib\glib-2.0.lib;C:\gstreamer\1.0\x86\lib\gobject-2.0.lib;C:\gstreamer\1.0\x86\lib\gstreamer-1.0.lib;C:\gstreamer\1.0\x86\lib\gstapp-1.0.lib;D:\Dev\boost_1_59_0\lib32-msvc-14.0\libboost_thread-vc140-mt-gd-1_59.lib;D:\Dev\boost_1_59_0\lib32-msvc-14.0\libboost_system-vc140-mt-gd-1_59.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
