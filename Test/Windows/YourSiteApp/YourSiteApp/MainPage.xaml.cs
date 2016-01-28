@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -29,7 +29,9 @@ namespace YourSiteApp
             this.InitializeComponent();
 
             this.Content = App.uView.Control;
-            App.uView.Load("http://www.jsunchained.com/demo.html", null);
+            App.uView.Load("http://www.jsunchained.com/demo3.html", null);
+            //App.uView.Load("http://www.jsunchained.com/demo2.html", null);
+            //App.uView.Load("http://www.jsunchained.com/demo.html", null);
             //App.uView.Load("https://www.google.fr", null);
 
             this.SizeChanged += OnSizeChanged;
