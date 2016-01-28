@@ -31,6 +31,7 @@ namespace Unchained
             Application.Current.Suspending += Suspending;
 
             //_webView.AllowedScriptNotifyUris = WebView.AnyScriptNotifyUri;
+            //_webView.ClearTemporaryWebDataAsync();
             _webView.NavigationStarting += NavigationStarting;
             _webView.ContentLoading += ContentLoading;
             _webView.ScriptNotify += ScriptNotify;
@@ -178,6 +179,7 @@ namespace Unchained
             else
                 unchainedStart(url.Substring(0, pos), version);
 
+            _camera.CoreDispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
             while (!unchainedReady())
                 Task.Delay(1);
 
