@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.InteropServices;
 using Windows.ApplicationModel;
 
@@ -27,45 +27,37 @@ namespace Unchained
 
             _relativePanel.Children.Add(_webView);
 
+            Application.Current.Resuming += Resuming;
+            Application.Current.Suspending += Suspending;
+
+            //_webView.AllowedScriptNotifyUris = WebView.AnyScriptNotifyUri;
+            _webView.NavigationStarting += NavigationStarting;
+            _webView.ContentLoading += ContentLoading;
+            _webView.ScriptNotify += ScriptNotify;
+
+            _accelerometer = Accelerometer.GetDefault();
+            if (_accelerometer != null)
+            {
+                // Establish the report interval
+                _accelerometer.ReportInterval = (_accelerometer.MinimumReportInterval > ACCEL_MIN_REPORT) ?
+                    _accelerometer.MinimumReportInterval : ACCEL_MIN_REPORT;
+
+                Window.Current.VisibilityChanged += new WindowVisibilityChangedEventHandler(VisibilityChanged);
+                _accelerometer.ReadingChanged += new TypedEventHandler<Accelerometer,
+                    AccelerometerReadingChangedEventArgs>(AccelChanged);
+            }
+            else
+                Log.WriteI(this.GetType().Name, " - No accelerometer found");
+
             PlatformData platformData = new PlatformData();
             platformData.startCam = _camera.Start;
             platformData.stopCam = _camera.Stop;
-            try
-            {
-                unchainedInit(platformData);
 
-                Application.Current.Resuming += Resuming;
-                Application.Current.Suspending += Suspending;
-
-                //_webView.AllowedScriptNotifyUris = WebView.AnyScriptNotifyUri;
-                _webView.NavigationStarting += NavigationStarting;
-                _webView.NavigationCompleted += NavigationCompleted;
-                _webView.ScriptNotify += ScriptNotify;
-
-                _accelerometer = Accelerometer.GetDefault();
-                if (_accelerometer != null)
-                {
-                    // Establish the report interval
-                    _accelerometer.ReportInterval = (_accelerometer.MinimumReportInterval > ACCEL_MIN_REPORT) ?
-                        _accelerometer.MinimumReportInterval : ACCEL_MIN_REPORT;
-
-                    Window.Current.VisibilityChanged += new WindowVisibilityChangedEventHandler(VisibilityChanged);
-                    _accelerometer.ReadingChanged += new TypedEventHandler<Accelerometer,
-                        AccelerometerReadingChangedEventArgs>(AccelChanged);
-                }
-                else
-                    Log.WriteI(this.GetType().Name, " - No accelerometer found");
-            }
-            catch (DllNotFoundException e)
-            {
-                Log.WriteF(this.GetType().Name, String.Format(" - {0}", e.Message));
-            }
-            catch (Exception e)
-            {
-                Log.WriteE(this.GetType().Name, String.Format(" - {0}", e.Message));
-            }
+            try { unchainedInit(platformData); }
+            catch (DllNotFoundException e) { Log.WriteF(this.GetType().Name, String.Format(" - {0}", e.Message)); }
         }
 
+        //
         private void NavigationStarting(WebView sender, WebViewNavigationStartingEventArgs args)
         {
             Log.WriteV(this.GetType().Name, String.Format(" - s:{0};e:{1}", sender.ToString(), args.Uri.ToString()));
@@ -78,22 +70,87 @@ namespace Unchained
                     unchainedReset(args.Uri.ToString().Substring(0, pos));
             }
             _started = true;
-            _webView.InvokeScriptAsync("eval", new string[] { "window.console.log=function(msg){window.external.notify(msg);};" });
         }
-        private void NavigationCompleted(WebView sender, WebViewNavigationCompletedEventArgs args)
+        private void ContentLoading(WebView sender, WebViewContentLoadingEventArgs args)
         {
-            Log.WriteV(this.GetType().Name, String.Format(" - s:{0};e:{1}", sender.ToString(), args.IsSuccess));
-            if (!args.IsSuccess)
-                Log.WriteW(this.GetType().Name, String.Format(" - {0}", args.WebErrorStatus.ToString()));
-
-            while (!unchainedReady())
-                Task.Delay(1);
-
-            Log.WriteI(this.GetType().Name, " - Ready!");
+            Log.WriteV(this.GetType().Name, String.Format(" - s:{0};e:{1}", sender.ToString(), args.Uri.ToString()));
+            _webView.InvokeScriptAsync("eval", new string[] { "console.log=function(msg){window.external.notify(msg);};" });
         }
+
+
+
+
+        private int _test = 0;
+
+
+
+
         private void ScriptNotify(object sender, NotifyEventArgs e)
         {
-            Log.WriteI("JavaScript", String.Format(" - {0}", e.Value));
+            Log.WriteI(this.GetType().Name, String.Format(" - {0}", e.Value));
+
+
+
+
+
+
+
+
+            if (e.Value.CompareTo("UPDATE") == 0)
+            {
+                float x, y, z;
+                switch (_test)
+                {
+                    case 0:
+                        Log.WriteI(this.GetType().Name, " - Accel #0 !!!");
+
+                        x = 0.5f;
+                        y = -8.0f;
+                        z = -10.5f;
+
+                        ++_test;
+                        break;
+
+                    case 1:
+                        Log.WriteI(this.GetType().Name, " - Accel #1 !!!");
+
+                        x = 6.5f;
+                        y = 0.0f;
+                        z = -10.5f;
+
+                        ++_test;
+                        break;
+
+                    case 2:
+                        Log.WriteI(this.GetType().Name, " - Accel #2 !!!");
+
+                        x = -10.5f;
+                        y = 8.0f;
+                        z = 8.5f;
+
+                        _test = 0;
+                        break;
+
+                    default:
+                        Log.WriteI(this.GetType().Name, " - Accel #3 !!!");
+
+                        x = 5.5f;
+                        y = 0.0f;
+                        z = -6.5f;
+
+                        _test = 0;
+                        break;
+                }
+                unchainedAccel(x, y, z);
+            }
+
+
+
+
+
+
+
+
         }
 
         ////// Version
@@ -120,6 +177,9 @@ namespace Unchained
                 unchainedStart(url, version);
             else
                 unchainedStart(url.Substring(0, pos), version);
+
+            while (!unchainedReady())
+                Task.Delay(1);
 
             _webView.Navigate(new Uri(url));
         }
