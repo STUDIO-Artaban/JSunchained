@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,12 +15,13 @@ using Windows.UI.Xaml.Media.Imaging;
 using System.IO;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Runtime.InteropServices;
+using Windows.UI.Core;
 
 namespace Unchained.Features
 {
     ////// Core (delegates)
-    public delegate Task<bool> StartCamDelegate(char device, short width, short height);
-    public delegate Task<bool> StopCamDelegate();
+    public delegate bool StartCamDelegate(char device, short width, short height);
+    public delegate bool StopCamDelegate();
 
     public class Camera
     {
@@ -38,6 +39,9 @@ namespace Unchained.Features
             };
             panel.Children.Add(_captureElement);
         }
+
+        //
+        public CoreDispatcher CoreDispatcher { get; set; }
 
         private MediaCapture _mediaCapture;
         private CaptureElement _captureElement;
@@ -65,14 +69,11 @@ namespace Unchained.Features
 
 
                 /* Get camera according expected resolution
-
                 // Get information about the preview
                 var previewProperties = _mediaCapture.VideoDeviceController.GetMediaStreamProperties(MediaStreamType.VideoPreview) as VideoEncodingProperties;
-
                 IMediaEncodingProperties properties = _mediaCapture.VideoDeviceController.GetAvailableMediaStreamProperties(MediaStreamType.VideoPreview).FirstOrDefault();
                 (properties as VideoEncodingProperties).Width = (uint)width;
                 (properties as VideoEncodingProperties).Height = (uint)height;
-
                 await _mediaCapture.VideoDeviceController.SetMediaStreamPropertiesAsync(MediaStreamType.VideoPreview, properties);
                 */
 
@@ -104,59 +105,69 @@ namespace Unchained.Features
             return true;
         }
 
+
+        private bool initializing;
+
+
         private Task _previewTask;
         private bool _running;
-        public async Task<bool> Start(char device, short width, short height)
+        public bool Start(char device, short width, short height)
         {
             Log.WriteV(this.GetType().Name, String.Format(" - d:{0};w:{1};h:{2}", (int)device, width, height));
 
-            if (!await Initialize(width, height))
-                return false;
-
-            // Set the preview source in the UI and mirror it if necessary
-            _captureElement.Source = _mediaCapture;
-            _captureElement.FlowDirection = FlowDirection.LeftToRight;
-
-            // Start the preview
-            await _mediaCapture.StartPreviewAsync();
-
-            _running = true;
-            _previewTask = new Task(async () =>
+            CoreDispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
             {
-                Windows.Storage.Streams.Buffer data = new Windows.Storage.Streams.Buffer((uint)(width * height * 4));
-                MemoryStream memory = new MemoryStream((int)(width * height * 4));
+                if (!await Initialize(width, height))
+                    return;
 
+                // Set the preview source in the UI and mirror it if necessary
+                _captureElement.Source = _mediaCapture;
+                _captureElement.FlowDirection = FlowDirection.LeftToRight;
 
-                while (_running)
+                // Start the preview
+                await _mediaCapture.StartPreviewAsync();
+
+                _running = true;
+                _previewTask = new Task(async () =>
                 {
-                    // Create the video frame to request a SoftwareBitmap preview frame
-                    var videoFrame = new VideoFrame(BitmapPixelFormat.Rgba8, (int)width, (int)height);
+                    Windows.Storage.Streams.Buffer data = new Windows.Storage.Streams.Buffer((uint)(width * height * 4));
+                    MemoryStream memory = new MemoryStream((int)(width * height * 4));
 
-                    using (var currentFrame = await _mediaCapture.GetPreviewFrameAsync(videoFrame))
+
+                    while (_running)
                     {
-                        // Collect the resulting frame
-                        currentFrame.SoftwareBitmap.CopyToBuffer(data);
-                        data.AsStream().CopyTo(memory);
+                        // Create the video frame to request a SoftwareBitmap preview frame
+                        var videoFrame = new VideoFrame(BitmapPixelFormat.Rgba8, (int)width, (int)height);
 
-                        unchainedCamera(memory.ToArray());
+                        using (var currentFrame = await _mediaCapture.GetPreviewFrameAsync(videoFrame))
+                        {
+                            // Collect the resulting frame
+                            currentFrame.SoftwareBitmap.CopyToBuffer(data);
+                            data.AsStream().CopyTo(memory);
+
+                            unchainedCamera(memory.ToArray());
+                        }
                     }
-                }
-            }, TaskCreationOptions.None);
-            _previewTask.Start();
+                }, TaskCreationOptions.None);
+                _previewTask.Start();
+            });
             return true;
         }
 
-        public async Task<bool> Stop()
+        public bool Stop()
         {
             Log.WriteV(this.GetType().Name);
 
             if (!_running)
                 return false;
 
-            _running = false;
-            await _previewTask;
+            CoreDispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+            {
+                _running = false;
+                await _previewTask;
 
-            await _mediaCapture.StopPreviewAsync();
+                await _mediaCapture.StopPreviewAsync();
+            });
             return true;
         }
 
