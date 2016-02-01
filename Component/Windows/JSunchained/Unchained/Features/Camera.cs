@@ -19,8 +19,8 @@ using Windows.UI.Core;
 
 namespace Unchained.Features
 {
-    ////// Core (delegates)
-    public delegate bool StartCamDelegate(char device, short width, short height);
+    ////// Core
+    public delegate bool StartCamDelegate(byte device, short width, short height);
     public delegate bool StopCamDelegate();
 
     public class Camera
@@ -105,13 +105,9 @@ namespace Unchained.Features
             return true;
         }
 
-
-        private bool initializing;
-
-
         private Task _previewTask;
         private bool _running;
-        public bool Start(char device, short width, short height)
+        public bool Start(byte device, short width, short height)
         {
             Log.WriteV(this.GetType().Name, String.Format(" - d:{0};w:{1};h:{2}", (int)device, width, height));
 
@@ -172,7 +168,7 @@ namespace Unchained.Features
         }
 
         ////// Core
-        [DllImport("JSunchained.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("JSunchained.dll", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
         private static extern void unchainedCamera(byte[] data);
 
     }
