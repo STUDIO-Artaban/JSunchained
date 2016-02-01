@@ -10,6 +10,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Core;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Unchained
 {
@@ -18,8 +19,6 @@ namespace Unchained
         public UView()
         {
             Log.WriteV(this.GetType().Name);
-            _assetsProtocol = false;
-            _started = false;
 
             _relativePanel = new RelativePanel();
             _webView = new WebView();
@@ -51,10 +50,12 @@ namespace Unchained
                 Log.WriteI(this.GetType().Name, " - No accelerometer found");
 
             PlatformData platformData = new PlatformData();
+            platformData.xDpi = 0.0f;
+            platformData.yDpi = 0.0f;
             platformData.startCam = _camera.Start;
             platformData.stopCam = _camera.Stop;
 
-            try { unchainedInit(platformData); }
+            try { unchainedInit(ref platformData); }
             catch (DllNotFoundException e) { Log.WriteF(this.GetType().Name, String.Format(" - {0}", e.Message)); }
         }
 
@@ -160,8 +161,8 @@ namespace Unchained
 
         ////// Tools
         private static String ASSETS_PROTOCOL = "assets://";
-        private bool _assetsProtocol;
-        private bool _started;
+        private bool _assetsProtocol = false;
+        private bool _started = false;
 
         public void Load(String url, String version)
         {
@@ -196,26 +197,26 @@ namespace Unchained
             public StartCamDelegate startCam;
             public StopCamDelegate stopCam;
         }
-        [DllImport("JSunchained.dll", CallingConvention = CallingConvention.Cdecl)]
-        private static extern void unchainedInit(PlatformData data);
-        [DllImport("JSunchained.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("JSunchained.dll", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
+        private static extern void unchainedInit(ref PlatformData data);
+        [DllImport("JSunchained.dll", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
         private static extern bool unchainedReady();
-        [DllImport("JSunchained.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("JSunchained.dll", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
         private static extern char unchainedReset(string url);
 
-        [DllImport("JSunchained.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("JSunchained.dll", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
         private static extern char unchainedStart(string url, string version);
-        [DllImport("JSunchained.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("JSunchained.dll", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
         private static extern void unchainedResume();
-        [DllImport("JSunchained.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("JSunchained.dll", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
         private static extern void unchainedPause();
-        [DllImport("JSunchained.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("JSunchained.dll", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
         private static extern void unchainedStop();
 
-        [DllImport("JSunchained.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("JSunchained.dll", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
         private static extern void unchainedAccel(float x, float y, float z);
 
-        ////// UI element
+        ////// UI
         private WebView _webView;
         public double Width
         {
