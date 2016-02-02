@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Runtime.InteropServices;
 using Windows.ApplicationModel;
 
@@ -54,6 +54,7 @@ namespace Unchained
             platformData.yDpi = 0.0f;
             platformData.startCam = _camera.Start;
             platformData.stopCam = _camera.Stop;
+            platformData.appPath = Directory.GetCurrentDirectory();
 
             try { unchainedInit(ref platformData); }
             catch (DllNotFoundException e) { Log.WriteF(this.GetType().Name, String.Format(" - {0}", e.Message)); }
@@ -196,6 +197,9 @@ namespace Unchained
 
             public StartCamDelegate startCam;
             public StopCamDelegate stopCam;
+
+            public string appPath;
+
         }
         [DllImport("JSunchained.dll", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
         private static extern void unchainedInit(ref PlatformData data);

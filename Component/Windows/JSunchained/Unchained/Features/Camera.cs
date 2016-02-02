@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -66,8 +66,6 @@ namespace Unchained.Features
 
 
 
-
-
                 /* Get camera according expected resolution
                 // Get information about the preview
                 var previewProperties = _mediaCapture.VideoDeviceController.GetMediaStreamProperties(MediaStreamType.VideoPreview) as VideoEncodingProperties;
@@ -76,7 +74,6 @@ namespace Unchained.Features
                 (properties as VideoEncodingProperties).Height = (uint)height;
                 await _mediaCapture.VideoDeviceController.SetMediaStreamPropertiesAsync(MediaStreamType.VideoPreview, properties);
                 */
-
 
 
 
@@ -127,9 +124,6 @@ namespace Unchained.Features
                 _previewTask = new Task(async () =>
                 {
                     Windows.Storage.Streams.Buffer data = new Windows.Storage.Streams.Buffer((uint)(width * height * 4));
-                    MemoryStream memory = new MemoryStream((int)(width * height * 4));
-
-
                     while (_running)
                     {
                         // Create the video frame to request a SoftwareBitmap preview frame
@@ -139,6 +133,7 @@ namespace Unchained.Features
                         {
                             // Collect the resulting frame
                             currentFrame.SoftwareBitmap.CopyToBuffer(data);
+                            MemoryStream memory = new MemoryStream();
                             data.AsStream().CopyTo(memory);
 
                             unchainedCamera(memory.ToArray());
