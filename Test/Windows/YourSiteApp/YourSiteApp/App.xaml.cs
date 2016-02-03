@@ -26,7 +26,10 @@ namespace YourSiteApp
     /// </summary>
     sealed partial class App : Application
     {
-        public static UView uView;
+
+
+        public static UView uView; // JSunchained: Declare 'UView' component
+
 
         /// <summary>
         /// Initialise l'objet d'application de singleton.  Il s'agit de la première ligne du code créé
@@ -37,7 +40,10 @@ namespace YourSiteApp
             this.InitializeComponent();
             this.Suspending += OnSuspending;
 
-            uView = new UView();
+
+            uView = new UView(); // JSunchained: Define 'UView' component
+
+
         }
 
         /// <summary>

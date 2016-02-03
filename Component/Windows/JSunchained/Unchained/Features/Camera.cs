@@ -16,11 +16,12 @@ using System.IO;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Runtime.InteropServices;
 using Windows.UI.Core;
+using System.Collections.Generic;
 
 namespace Unchained.Features
 {
     ////// Core
-    public delegate bool StartCamDelegate(byte device, short width, short height);
+    public delegate void StartCamDelegate(byte device, short width, short height);
     public delegate bool StopCamDelegate();
 
     public class Camera
@@ -46,7 +47,7 @@ namespace Unchained.Features
         private MediaCapture _mediaCapture;
         private CaptureElement _captureElement;
 
-        public async Task<bool> Initialize(short width, short height)
+        public async Task<bool> Initialize(byte device, short width, short height)
         {
             Log.WriteV(this.GetType().Name);
             if (_mediaCapture == null)
@@ -54,30 +55,12 @@ namespace Unchained.Features
                 // Attempt to get the default camera if one is available
                 var allVideoDevices = await DeviceInformation.FindAllAsync(DeviceClass.VideoCapture);
 
-                var cameraDevice = allVideoDevices.FirstOrDefault();
+                var cameraDevice = allVideoDevices.FirstOrDefault(); // TODO: Get camera according 'device' parameter
                 if (cameraDevice == null)
                 {
                     Log.WriteE(this.GetType().Name, " - No camera device found!");
                     return false;
                 }
-
-
-
-
-
-
-                /* Get camera according expected resolution
-                // Get information about the preview
-                var previewProperties = _mediaCapture.VideoDeviceController.GetMediaStreamProperties(MediaStreamType.VideoPreview) as VideoEncodingProperties;
-                IMediaEncodingProperties properties = _mediaCapture.VideoDeviceController.GetAvailableMediaStreamProperties(MediaStreamType.VideoPreview).FirstOrDefault();
-                (properties as VideoEncodingProperties).Width = (uint)width;
-                (properties as VideoEncodingProperties).Height = (uint)height;
-                await _mediaCapture.VideoDeviceController.SetMediaStreamPropertiesAsync(MediaStreamType.VideoPreview, properties);
-                */
-
-
-
-
 
                 // Create MediaCapture and its settings
                 _mediaCapture = new MediaCapture();
@@ -87,10 +70,11 @@ namespace Unchained.Features
                     StreamingCaptureMode = StreamingCaptureMode.Video
                 };
 
-                // Initialize MediaCapture
+                // Initialize MediaCapture & Set camera resolution
                 try
                 {
                     await _mediaCapture.InitializeAsync(settings);
+                    await SetResolution(device, width, height);
                 }
                 catch (UnauthorizedAccessException)
                 {
@@ -102,16 +86,48 @@ namespace Unchained.Features
             return true;
         }
 
+        private async Task SetResolution(byte device, short width, short height)
+        {
+            Log.WriteV(this.GetType().Name);
+            bool camResSet = true;
+
+            var curProperty = _mediaCapture.VideoDeviceController.GetMediaStreamProperties(MediaStreamType.VideoPreview) as VideoEncodingProperties;
+            if ((curProperty.Width != (uint)width) || (curProperty.Height != (uint)height))
+            {
+                camResSet = false;
+
+                var properties = _mediaCapture.VideoDeviceController.GetAvailableMediaStreamProperties(MediaStreamType.VideoPreview);
+                foreach (VideoEncodingProperties property in properties)
+                {
+                    if ((property.Width == (uint)width) && (property.Height == (uint)height))
+                    {
+                        await _mediaCapture.VideoDeviceController.SetMediaStreamPropertiesAsync(MediaStreamType.VideoPreview, property);
+                        camResSet = true;
+                        break;
+                    }
+                }
+            }
+            if (!camResSet)
+            {
+                Log.WriteW(this.GetType().Name, String.Format(" - Failed to set {0}x{1} resolution to camera #{2}",
+                    width, height, device));
+                _mediaCapture = null;
+            }
+        }
+
         private Task _previewTask;
         private bool _running;
-        public bool Start(byte device, short width, short height)
+        public void Start(byte device, short width, short height)
         {
             Log.WriteV(this.GetType().Name, String.Format(" - d:{0};w:{1};h:{2}", (int)device, width, height));
 
             CoreDispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
             {
-                if (!await Initialize(width, height))
+                if (!await Initialize(device, width, height))
+                {
+                    unchainedCamera(null); // Failed to start camera
                     return;
+                }
 
                 // Set the preview source in the UI and mirror it if necessary
                 _captureElement.Source = _mediaCapture;
@@ -142,7 +158,6 @@ namespace Unchained.Features
                 }, TaskCreationOptions.None);
                 _previewTask.Start();
             });
-            return true;
         }
 
         public bool Stop()

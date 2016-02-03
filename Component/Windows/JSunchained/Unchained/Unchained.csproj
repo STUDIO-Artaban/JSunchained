@@ -107,6 +107,7 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constant.cs" />
     <Compile Include="Features\Camera.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="UView.cs" />

@@ -28,20 +28,22 @@ namespace YourSiteApp
         {
             this.InitializeComponent();
 
+
+            // JSunchained: Add 'UView' component into the main page & Load demo application
             this.Content = App.uView.Control;
-            App.uView.Load("http://www.jsunchained.com/demo1.html", null);
-            //App.uView.Load("http://www.jsunchained.com/demo3.html", null);
-            //App.uView.Load("http://www.jsunchained.com/demo2.html", null);
-            //App.uView.Load("http://www.jsunchained.com/demo.html", null);
-            //App.uView.Load("https://www.google.fr", null);
+            App.uView.Load("http://www.jsunchained.com/demo.html", null);
+
 
             this.SizeChanged += OnSizeChanged;
         }
 
         private void OnSizeChanged(object sender, SizeChangedEventArgs e)
         {
+
+            // JSunchained: Resize 'UView' component according page size
             App.uView.Height = this.ActualHeight;
             App.uView.Width = this.ActualWidth;
+
         }
     }
 }

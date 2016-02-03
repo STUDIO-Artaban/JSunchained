@@ -39,8 +39,8 @@ namespace Unchained
             if (_accelerometer != null)
             {
                 // Establish the report interval
-                _accelerometer.ReportInterval = (_accelerometer.MinimumReportInterval > ACCEL_MIN_REPORT) ?
-                    _accelerometer.MinimumReportInterval : ACCEL_MIN_REPORT;
+                _accelerometer.ReportInterval = (_accelerometer.MinimumReportInterval > Constant.ACCEL_MIN_REPORT) ?
+                    _accelerometer.MinimumReportInterval : Constant.ACCEL_MIN_REPORT;
 
                 Window.Current.VisibilityChanged += new WindowVisibilityChangedEventHandler(VisibilityChanged);
                 _accelerometer.ReadingChanged += new TypedEventHandler<Accelerometer,
@@ -79,86 +79,11 @@ namespace Unchained
             Log.WriteV(this.GetType().Name, String.Format(" - s:{0};e:{1}", sender.ToString(), args.Uri.ToString()));
             _webView.InvokeScriptAsync("eval", new string[] { "console.log=function(msg){window.external.notify(msg);};" });
         }
-
-
-
-
-        private int _test = 0;
-
-
-
-
         private void ScriptNotify(object sender, NotifyEventArgs e)
         {
+            // Log JavaScript console
             Log.WriteI(this.GetType().Name, String.Format(" - {0}", e.Value));
-
-
-
-
-
-
-
-
-            if (e.Value.CompareTo("UPDATE") == 0)
-            {
-                float x, y, z;
-                switch (_test)
-                {
-                    case 0:
-                        Log.WriteI(this.GetType().Name, " - Accel #0 !!!");
-
-                        x = 0.5f;
-                        y = -8.0f;
-                        z = -10.5f;
-
-                        ++_test;
-                        break;
-
-                    case 1:
-                        Log.WriteI(this.GetType().Name, " - Accel #1 !!!");
-
-                        x = 6.5f;
-                        y = 0.0f;
-                        z = -10.5f;
-
-                        ++_test;
-                        break;
-
-                    case 2:
-                        Log.WriteI(this.GetType().Name, " - Accel #2 !!!");
-
-                        x = -10.5f;
-                        y = 8.0f;
-                        z = 8.5f;
-
-                        _test = 0;
-                        break;
-
-                    default:
-                        Log.WriteI(this.GetType().Name, " - Accel #3 !!!");
-
-                        x = 5.5f;
-                        y = 0.0f;
-                        z = -6.5f;
-
-                        _test = 0;
-                        break;
-                }
-                unchainedAccel(x, y, z);
-            }
-
-
-
-
-
-
-
-
         }
-
-        ////// Version
-        private static String VERSION_LAST = " ";
-	    private static String VERSION_1_0_0 = "1.0.0";
 
         ////// Tools
         private static String ASSETS_PROTOCOL = "assets://";
@@ -169,7 +94,7 @@ namespace Unchained
         {
             Log.WriteV(this.GetType().Name, String.Format(" - u:{0};v:{1}", url, version));
             if (version == null)
-                version = VERSION_LAST;
+                version = Constant.VERSION_LAST;
 
             _assetsProtocol = url.StartsWith(ASSETS_PROTOCOL);
             if (_assetsProtocol)
@@ -256,7 +181,6 @@ namespace Unchained
         ////// Resources
         private Camera _camera;
 
-        private static uint ACCEL_MIN_REPORT = 16;
         private Accelerometer _accelerometer;
         private void VisibilityChanged(object sender, VisibilityChangedEventArgs e)
         {
@@ -273,9 +197,10 @@ namespace Unchained
         }
         private void AccelChanged(object sender, AccelerometerReadingChangedEventArgs e)
         {
-            //Log.WriteV(this.GetType().Name, string.Format(" - s:{0};e:{1}", sender.ToString(), e.Reading.ToString()));
             AccelerometerReading reading = e.Reading;
-            unchainedAccel((float)reading.AccelerationX, (float)reading.AccelerationY, (float)reading.AccelerationZ);
+            unchainedAccel((float)reading.AccelerationX * Constant.ACCEL_FACTOR,
+                           (float)reading.AccelerationY * Constant.ACCEL_FACTOR,
+                           (float)reading.AccelerationZ * Constant.ACCEL_FACTOR);
         }
     }
 }
