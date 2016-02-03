@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -74,7 +74,8 @@ namespace Unchained.Features
                 try
                 {
                     await _mediaCapture.InitializeAsync(settings);
-                    await SetResolution(device, width, height);
+                    if (!await SetResolution(device, width, height))
+                        return false;
                 }
                 catch (UnauthorizedAccessException)
                 {
@@ -85,8 +86,7 @@ namespace Unchained.Features
             }
             return true;
         }
-
-        private async Task SetResolution(byte device, short width, short height)
+        private async Task<bool> SetResolution(byte device, short width, short height)
         {
             Log.WriteV(this.GetType().Name);
             bool camResSet = true;
@@ -113,6 +113,7 @@ namespace Unchained.Features
                     width, height, device));
                 _mediaCapture = null;
             }
+            return camResSet;
         }
 
         private Task _previewTask;
