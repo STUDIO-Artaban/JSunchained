@@ -250,11 +250,6 @@ NSString* deviceName() {
         [html insertString:@"\n<script>\n"
          "window.requestUnchained = function() { };\n"
          "</script>" atIndex:pos.location + 6];
-        //pos = [html rangeOfString:@"</body>"];
-        //NSString* jsURL = [[NSString alloc] initWithFormat:@"<script src=\"%s%s.js\"></script>\n",
-        //                   JS_UNCHAINED_URL, unchainedKey()];
-        //[html insertString:jsURL atIndex:pos.location];
-        //[jsURL release];
     }
     while (!unchainedReady())
         [NSThread sleepForTimeInterval:.1];
@@ -270,33 +265,10 @@ NSString* deviceName() {
     connHTTP = nil;
     baseURL = nil;
 }
-
-
-//typedef void (*MyLoadRequestMethod)(id receiver, SEL selector, NSURLRequest*);
-
-
 -(void)connection:(NSURLConnection*)connection didFailWithError:(NSError*)error {
 
-    // The request has failed for some reason!
-    // Check the error var
-    NSLog(@"Error: %@", error);
-
-    
-
-    
-    
-    //[super loadRequest:connection.currentRequest];
-    //[[self superclass] loadRequest:connection.currentRequest];
-    
-    
-    //MyLoadRequestMethod mthd = [[self superclass] instanceMethodForSelector:@selector(loadRequest:)];
-    //mthd(self, @selector(loadRequest:), connection.currentRequest);
-    
-    
-    
-
-
-
+    NSLog(@"ERROR: %@ (line:%d)", error, __LINE__);
+    // TODO: Load URL using common UIWebView control features
 }
 
 //////
