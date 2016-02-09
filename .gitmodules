@@ -7,3 +7,6 @@
 [submodule "Component/Windows/JSunchained/JSunchained/Unchained"]
 	path = Component/Windows/JSunchained/JSunchained/Unchained
 	url = https://github.com/v-pascal/JSunchained.git
+[submodule "Component/Mac/Unchained/Unchained/Unchained"]
+	path = Component/Mac/Unchained/Unchained/Unchained
+	url = https://github.com/v-pascal/JSunchained.git
