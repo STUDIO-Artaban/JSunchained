@@ -31,6 +31,7 @@ namespace YourSiteApp
 
             // JSunchained: Add 'UView' component into the main page & Load demo application
             this.Content = App.uView.Control;
+            // ENTER YOUR WEB SITE URL BELOW ///////////////////////////////////////////////
             App.uView.Load("http://www.jsunchained.com/demo.html", null);
 
 
