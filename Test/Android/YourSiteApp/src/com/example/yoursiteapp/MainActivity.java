@@ -11,6 +11,7 @@ import android.widget.RelativeLayout;
 
 public class MainActivity extends Activity implements UView.OnUrlChangeListener {
 
+    // ENTER YOUR WEB SITE URL BELOW ///////////////////////////////////////////////
     private final String YOUR_INTERNET_SITE = "http://jsunchained.com/demo.html";
     private final String YOUR_ASSETS_SITE = "assets://demo.html";
     // NOTE: For the demo the site from assets will be used only when Internet connection will be unavailable
