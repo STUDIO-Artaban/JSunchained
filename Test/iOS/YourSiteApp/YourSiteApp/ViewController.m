@@ -11,6 +11,7 @@
 #import <netdb.h>
 #import <SystemConfiguration/SystemConfiguration.h>
 
+// ENTER YOUR WEB SITE URL BELOW ///////////////////////////////////////////////
 static NSString* YOUR_INTERNET_SITE = @"http://jsunchained.com/demo.html";
 static NSString* YOUR_ASSETS_SITE = @"assets://demo.html";
 // NOTE: For the demo the site from assets will be used only when Internet connection will be unavailable
