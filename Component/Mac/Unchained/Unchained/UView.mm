@@ -100,9 +100,9 @@
     [url release];
 
     JSContext* context = [self valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
-    context[@"console"][@"log"] = ^(JSValue* msg) {
+    [[context objectForKeyedSubscript:@"console"] setObject:^(JSValue* msg) {
         NSLog(@"CONSOLE: %@", msg);
-    };
+    } forKeyedSubscript:@"log"];
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
     if (start == TRUE)
         self.Error = unchainedStart([baseURL cStringUsingEncoding:NSUTF8StringEncoding],
