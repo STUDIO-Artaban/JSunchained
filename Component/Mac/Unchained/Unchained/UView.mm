@@ -99,10 +99,25 @@
     }
     [url release];
 
-    JSContext* context = [self valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
-    [[context objectForKeyedSubscript:@"console"] setObject:^(JSValue* msg) {
-        NSLog(@"CONSOLE: %@", msg);
-    } forKeyedSubscript:@"log"];
+    
+    
+    
+
+    
+    
+    
+    //JSContext* context = [self valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
+    //[[context objectForKeyedSubscript:@"console"] setObject:^(JSValue* msg) {
+    //    NSLog(@"CONSOLE: %@", msg);
+    //} forKeyedSubscript:@"log"];
+    
+    
+    
+    
+    
+    
+    
+    
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
     if (start == TRUE)
         self.Error = unchainedStart([baseURL cStringUsingEncoding:NSUTF8StringEncoding],
@@ -188,7 +203,7 @@
     }
     while (!unchainedReady())
         [NSThread sleepForTimeInterval:.1];
-
+    
     loading = TRUE;
     [self.mainFrame loadHTMLString:html baseURL:[NSURL URLWithString:baseURL]];
     [html release];

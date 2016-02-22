@@ -32,13 +32,12 @@
     
     AVCaptureDevice* backCamera = nil;
     NSArray* deviceArray = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
-    for (AVCaptureDevice* device in deviceArray)
-        if ([device position] == AVCaptureDevicePositionBack)
-            backCamera = device;
-    
+
+    // Get default camera device
+    backCamera = (AVCaptureDevice*)[deviceArray objectAtIndex:0];
     if (backCamera == nil) {
-        
-        NSLog(@"ERROR: No back-facing camera found (line:%d)", __LINE__);
+
+        NSLog(@"ERROR: No default Webcam found (line:%d)", __LINE__);
         return FALSE;
     }
     NSError* err = nil;
@@ -87,7 +86,8 @@
     }
     [videoOutput setAlwaysDiscardsLateVideoFrames:YES];
     [videoOutput setVideoSettings:[NSDictionary dictionaryWithObject:[NSNumber
-                                                                      numberWithInt:kCVPixelFormatType_32BGRA] forKey:(id)kCVPixelBufferPixelFormatTypeKey]];
+                                                                      numberWithInt:kCVPixelFormatType_32BGRA]
+                                                              forKey:(id)kCVPixelBufferPixelFormatTypeKey]];
     dispatch_queue_t camQueue = dispatch_queue_create("camQueue", NULL);
     [videoOutput setSampleBufferDelegate:self queue:camQueue];
     if ([captureSession canAddOutput:videoOutput])

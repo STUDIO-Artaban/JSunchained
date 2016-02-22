@@ -39,13 +39,10 @@
 		502CD87C1C69FE140002B6F3 /* Unchained.h in Headers */ = {isa = PBXBuildFile; fileRef = 502CD85E1C69FE140002B6F3 /* Unchained.h */; };
 		502CD8811C6A30F70002B6F3 /* NSResources.h in Headers */ = {isa = PBXBuildFile; fileRef = 502CD87F1C6A30F70002B6F3 /* NSResources.h */; };
 		502CD8821C6A30F70002B6F3 /* NSResources.mm in Sources */ = {isa = PBXBuildFile; fileRef = 502CD8801C6A30F70002B6F3 /* NSResources.mm */; };
+		506C3B321C7BB311000CE854 /* GStreamer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506C3B311C7BB311000CE854 /* GStreamer.framework */; };
 		508A590C1C78B146008D4CCE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 508A590B1C78B146008D4CCE /* AVFoundation.framework */; };
 		508A590E1C78B19B008D4CCE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 508A590D1C78B19B008D4CCE /* CoreMedia.framework */; };
 		508A59101C78B1C7008D4CCE /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 508A590F1C78B1C7008D4CCE /* CoreVideo.framework */; };
-		508A59161C78BC2B008D4CCE /* libgstreamer-1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 508A59151C78BC2B008D4CCE /* libgstreamer-1.0.dylib */; };
-		508A59181C78BC66008D4CCE /* libgobject-2.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 508A59171C78BC66008D4CCE /* libgobject-2.0.dylib */; };
-		508A591A1C78BD0B008D4CCE /* libgstapp-1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 508A59191C78BD0B008D4CCE /* libgstapp-1.0.dylib */; };
-		508A591C1C78BDDC008D4CCE /* libglib-2.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 508A591B1C78BDDC008D4CCE /* libglib-2.0.dylib */; };
 		50CB8DC31C7B189500A50404 /* boost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB8DC21C7B189500A50404 /* boost.a */; };
 		50FAC9D91C69F610009F3B3F /* UView.h in Headers */ = {isa = PBXBuildFile; fileRef = 50FAC9D81C69F610009F3B3F /* UView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50FAC9E21C69F999009F3B3F /* UView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 50FAC9E11C69F999009F3B3F /* UView.mm */; };
@@ -85,13 +82,10 @@
 		502CD85E1C69FE140002B6F3 /* Unchained.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unchained.h; sourceTree = "<group>"; };
 		502CD87F1C6A30F70002B6F3 /* NSResources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSResources.h; sourceTree = "<group>"; };
 		502CD8801C6A30F70002B6F3 /* NSResources.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NSResources.mm; sourceTree = "<group>"; };
+		506C3B311C7BB311000CE854 /* GStreamer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GStreamer.framework; path = ../../../../../../../Library/Frameworks/GStreamer.framework; sourceTree = "<group>"; };
 		508A590B1C78B146008D4CCE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		508A590D1C78B19B008D4CCE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		508A590F1C78B1C7008D4CCE /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
-		508A59151C78BC2B008D4CCE /* libgstreamer-1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libgstreamer-1.0.dylib"; path = "../../../../../../../Library/Frameworks/GStreamer.framework/Versions/1.0/lib/libgstreamer-1.0.dylib"; sourceTree = "<group>"; };
-		508A59171C78BC66008D4CCE /* libgobject-2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libgobject-2.0.dylib"; path = "../../../../../../../Library/Frameworks/GStreamer.framework/Versions/1.0/lib/libgobject-2.0.dylib"; sourceTree = "<group>"; };
-		508A59191C78BD0B008D4CCE /* libgstapp-1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libgstapp-1.0.dylib"; path = "../../../../../../../Library/Frameworks/GStreamer.framework/Versions/1.0/lib/libgstapp-1.0.dylib"; sourceTree = "<group>"; };
-		508A591B1C78BDDC008D4CCE /* libglib-2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libglib-2.0.dylib"; path = "../../../../../../../Library/Frameworks/GStreamer.framework/Versions/1.0/lib/libglib-2.0.dylib"; sourceTree = "<group>"; };
 		50CB8DC21C7B189500A50404 /* boost.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = boost.a; path = ../../../../../Builds/boost/1.60.0/libs/boost/lib/osx/boost.a; sourceTree = "<group>"; };
 		50FAC9D51C69F610009F3B3F /* Unchained.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Unchained.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50FAC9D81C69F610009F3B3F /* UView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UView.h; sourceTree = "<group>"; };
@@ -106,10 +100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50CB8DC31C7B189500A50404 /* boost.a in Frameworks */,
-				508A591C1C78BDDC008D4CCE /* libglib-2.0.dylib in Frameworks */,
-				508A591A1C78BD0B008D4CCE /* libgstapp-1.0.dylib in Frameworks */,
-				508A59181C78BC66008D4CCE /* libgobject-2.0.dylib in Frameworks */,
-				508A59161C78BC2B008D4CCE /* libgstreamer-1.0.dylib in Frameworks */,
+				506C3B321C7BB311000CE854 /* GStreamer.framework in Frameworks */,
 				508A59101C78B1C7008D4CCE /* CoreVideo.framework in Frameworks */,
 				508A590E1C78B19B008D4CCE /* CoreMedia.framework in Frameworks */,
 				508A590C1C78B146008D4CCE /* AVFoundation.framework in Frameworks */,
@@ -279,10 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				50CB8DC21C7B189500A50404 /* boost.a */,
-				508A591B1C78BDDC008D4CCE /* libglib-2.0.dylib */,
-				508A59191C78BD0B008D4CCE /* libgstapp-1.0.dylib */,
-				508A59171C78BC66008D4CCE /* libgobject-2.0.dylib */,
-				508A59151C78BC2B008D4CCE /* libgstreamer-1.0.dylib */,
+				506C3B311C7BB311000CE854 /* GStreamer.framework */,
 				508A590F1C78B1C7008D4CCE /* CoreVideo.framework */,
 				508A590D1C78B19B008D4CCE /* CoreMedia.framework */,
 				508A590B1C78B146008D4CCE /* AVFoundation.framework */,
@@ -514,17 +502,17 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "__ASSERT_MACROS_DEFINE_VERSIONS_WITHOUT_UNDERSCORES=0";
 				HEADER_SEARCH_PATHS = (
 					/Users/Pascal/Builds/boost/1.60.0/libs/boost/include,
-					"$(LOCAL_LIBRARY_DIR)/Frameworks/GStreamer.framework/Versions/1.0/Headers",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks/GStreamer.framework/Headers",
 				);
 				INFOPLIST_FILE = Unchained/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(LOCAL_LIBRARY_DIR)/Frameworks/GStreamer.framework/Versions/1.0/lib",
 					/Users/Pascal/Builds/boost/1.60.0/libs/boost/lib/osx,
+					"$(LOCAL_LIBRARY_DIR)/Frameworks/GStreamer.framework/Libraries",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DTARGET_OS_X",
@@ -557,17 +545,17 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "__ASSERT_MACROS_DEFINE_VERSIONS_WITHOUT_UNDERSCORES=0";
 				HEADER_SEARCH_PATHS = (
 					/Users/Pascal/Builds/boost/1.60.0/libs/boost/include,
-					"$(LOCAL_LIBRARY_DIR)/Frameworks/GStreamer.framework/Versions/1.0/Headers",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks/GStreamer.framework/Headers",
 				);
 				INFOPLIST_FILE = Unchained/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(LOCAL_LIBRARY_DIR)/Frameworks/GStreamer.framework/Versions/1.0/lib",
 					/Users/Pascal/Builds/boost/1.60.0/libs/boost/lib/osx,
+					"$(LOCAL_LIBRARY_DIR)/Frameworks/GStreamer.framework/Libraries",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DTARGET_OS_X",
