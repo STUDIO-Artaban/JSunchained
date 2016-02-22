@@ -11,6 +11,7 @@ Comme vous l'aurez sans doute compris, ce composant dépend de l'**OS** sur lequ
 * [Android](https://github.com/STUDIO-Artaban/JSunchained/tree/master/Component/Android)
 * [iOS](https://github.com/STUDIO-Artaban/JSunchained/tree/master/Component/iOS)
 * [Windows](https://github.com/STUDIO-Artaban/JSunchained/tree/master/Component/Windows) (UWP)
+* [Mac](https://github.com/STUDIO-Artaban/JSunchained/tree/master/Component/Mac)
 
 **NB:** Avant toute installation veillez à importer les sous-modules avec les commandes **git** ci-dessous.
 
