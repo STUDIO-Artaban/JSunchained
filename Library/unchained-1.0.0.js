@@ -124,9 +124,10 @@ window.unchained = {
     connected : false,
     isAndroid : function() { return (/Android/i.test(navigator.userAgent)); },
     isIOS : function() { return (/iPhone|iPad|iPod/i.test(navigator.userAgent)); },
-    isWindowsPhone : function() { return (/IEMobile/i.test(navigator.userAgent)); },
+    isWindows : function() { return (/Windows/i.test(navigator.userAgent)); },
+    isMac : function() { return (/Mac OS X/i.test(navigator.userAgent)); },
     isAvailable : function() {
-        return ((this.isAndroid() || this.isIOS() || this.isWindowsPhone()) && (typeof requestUnchained != 'undefined'));
+        return ((this.isAndroid() || this.isIOS() || this.isWindows() || this.isMac()) && (typeof requestUnchained != 'undefined'));
     },
     isRunning : function() { return (this.isAvailable() && this.connected); },
     toString : function() {
@@ -274,27 +275,41 @@ window.requestUnchained = function() {
 };
 
 //////
+var varConnFlag = false;
+var varConnXHR;
+
 function loopUnchained() {
     if (!unchained.connected) {
 
+        if (varConnFlag) {
+            setTimeout(loopUnchained, LOOP_DELAY);
+            return;
+        }
         address = LOCAL_HOST;
-        var http = new XMLHttpRequest();
+        varConnXHR = new XMLHttpRequest();
+        varConnXHR.onreadystatechange = function() {
+            if (varConnXHR.readyState == 4) {
+                if (varConnXHR.status == 200) {
+
+                    unchained.connected = true;
+                    address += port + '/';
+                    if ((permAllowing) && (!unchained.permission))
+                        permAllowing = false;
+                    console.log('JSunchained: Connected!');
+                }
+                else if (++port > PORT_MAX)
+                    port = PORT_MIN;
+
+                varConnFlag = false;
+            }
+        };
         try {
 
-            http.open('HEAD', address + port + '/', false);
-            http.send();
+            varConnXHR.open('HEAD', address + port + '/', true);
+            varConnXHR.send();
+            varConnFlag = true;
         }
         catch (e) { }
-        if (http.status == 200) {
-
-            unchained.connected = true;
-            address += port + '/';
-            if ((permAllowing) && (!unchained.permission))
-                permAllowing = false;
-            console.log('JSunchained: Connected!');
-        }
-        else if (++port > PORT_MAX)
-            port = PORT_MIN;
     }
     else if (permAllowing)
         requestUnchained(UNCHAINED_REQ_PERMISSION);
@@ -318,4 +333,3 @@ function loopUnchained() {
 }
 setTimeout(loopUnchained, 200);
 console.log('JSunchained: Started!');
-
