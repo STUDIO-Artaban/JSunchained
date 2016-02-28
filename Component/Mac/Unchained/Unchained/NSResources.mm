@@ -33,10 +33,10 @@
     AVCaptureDevice* backCamera = nil;
     NSArray* deviceArray = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
 
-    // Get default camera device
-    backCamera = (AVCaptureDevice*)[deviceArray objectAtIndex:0];
-    if (backCamera == nil) {
-
+    // Get default camera device (if any)
+    if ([deviceArray count])
+        backCamera = (AVCaptureDevice*)[deviceArray objectAtIndex:0];
+    else {
         NSLog(@"ERROR: No default Webcam found (line:%d)", __LINE__);
         return FALSE;
     }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		500626D31C7C636400DE8B08 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500626D21C7C636400DE8B08 /* JavaScriptCore.framework */; };
+		500626F41C7C913E00DE8B08 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500626F31C7C913E00DE8B08 /* AppKit.framework */; };
 		502CD85F1C69FE140002B6F3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 502CD8361C69FE130002B6F3 /* .gitignore */; };
 		502CD8601C69FE140002B6F3 /* Discover.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 502CD8381C69FE130002B6F3 /* Discover.cpp */; };
 		502CD8611C69FE140002B6F3 /* Discover.h in Headers */ = {isa = PBXBuildFile; fileRef = 502CD8391C69FE130002B6F3 /* Discover.h */; };
@@ -39,17 +41,35 @@
 		502CD87C1C69FE140002B6F3 /* Unchained.h in Headers */ = {isa = PBXBuildFile; fileRef = 502CD85E1C69FE140002B6F3 /* Unchained.h */; };
 		502CD8811C6A30F70002B6F3 /* NSResources.h in Headers */ = {isa = PBXBuildFile; fileRef = 502CD87F1C6A30F70002B6F3 /* NSResources.h */; };
 		502CD8821C6A30F70002B6F3 /* NSResources.mm in Sources */ = {isa = PBXBuildFile; fileRef = 502CD8801C6A30F70002B6F3 /* NSResources.mm */; };
-		506C3B321C7BB311000CE854 /* GStreamer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506C3B311C7BB311000CE854 /* GStreamer.framework */; };
 		508A590C1C78B146008D4CCE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 508A590B1C78B146008D4CCE /* AVFoundation.framework */; };
 		508A590E1C78B19B008D4CCE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 508A590D1C78B19B008D4CCE /* CoreMedia.framework */; };
 		508A59101C78B1C7008D4CCE /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 508A590F1C78B1C7008D4CCE /* CoreVideo.framework */; };
 		50CB8DC31C7B189500A50404 /* boost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CB8DC21C7B189500A50404 /* boost.a */; };
+		50DDE1A81C8047A4000E66CA /* libGST.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50DDE1A71C8047A4000E66CA /* libGST.framework */; };
+		50E3BC021C81F93C00D7F40B /* libglib-2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E3BBFE1C81F93C00D7F40B /* libglib-2.0.a */; };
+		50E3BC031C81F93C00D7F40B /* libgobject-2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E3BBFF1C81F93C00D7F40B /* libgobject-2.0.a */; };
+		50E3BC041C81F93C00D7F40B /* libgstapp-1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E3BC001C81F93C00D7F40B /* libgstapp-1.0.a */; };
+		50E3BC051C81F93C00D7F40B /* libgstreamer-1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E3BC011C81F93C00D7F40B /* libgstreamer-1.0.a */; };
+		50E3BC071C81F96500D7F40B /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E3BC061C81F96500D7F40B /* libiconv.tbd */; };
+		50E3BC091C81F97F00D7F40B /* libffi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E3BC081C81F97F00D7F40B /* libffi.a */; };
+		50E3BC0C1C81F9BC00D7F40B /* libgstbase-1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E3BC0A1C81F9BC00D7F40B /* libgstbase-1.0.a */; };
+		50E3BC0D1C81F9BC00D7F40B /* libintl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E3BC0B1C81F9BC00D7F40B /* libintl.a */; };
+		50E3BC0F1C81F9E100D7F40B /* libgmodule-2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E3BC0E1C81F9E100D7F40B /* libgmodule-2.0.a */; };
+		50E3BC141C81FA7100D7F40B /* libgstapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E3BC101C81FA7100D7F40B /* libgstapp.a */; };
+		50E3BC151C81FA7100D7F40B /* libgstcoreelements.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E3BC111C81FA7100D7F40B /* libgstcoreelements.a */; };
+		50E3BC161C81FA7100D7F40B /* libgstjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E3BC121C81FA7100D7F40B /* libgstjpeg.a */; };
+		50E3BC171C81FA7100D7F40B /* libgstvideoconvert.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E3BC131C81FA7100D7F40B /* libgstvideoconvert.a */; };
+		50E3BC191C81FABE00D7F40B /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E3BC181C81FABE00D7F40B /* libjpeg.a */; };
+		50E3BC1B1C81FB7800D7F40B /* libgstvideo-1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E3BC1A1C81FB7800D7F40B /* libgstvideo-1.0.a */; };
+		50E3BC1D1C81FBF000D7F40B /* liborc-0.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E3BC1C1C81FBF000D7F40B /* liborc-0.4.a */; };
 		50FAC9D91C69F610009F3B3F /* UView.h in Headers */ = {isa = PBXBuildFile; fileRef = 50FAC9D81C69F610009F3B3F /* UView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50FAC9E21C69F999009F3B3F /* UView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 50FAC9E11C69F999009F3B3F /* UView.mm */; };
 		50FAC9E41C69FA3C009F3B3F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50FAC9E31C69FA3C009F3B3F /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		500626D21C7C636400DE8B08 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		500626F31C7C913E00DE8B08 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		502CD8361C69FE130002B6F3 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		502CD8381C69FE130002B6F3 /* Discover.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Discover.cpp; sourceTree = "<group>"; };
 		502CD8391C69FE130002B6F3 /* Discover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Discover.h; sourceTree = "<group>"; };
@@ -82,11 +102,27 @@
 		502CD85E1C69FE140002B6F3 /* Unchained.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unchained.h; sourceTree = "<group>"; };
 		502CD87F1C6A30F70002B6F3 /* NSResources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSResources.h; sourceTree = "<group>"; };
 		502CD8801C6A30F70002B6F3 /* NSResources.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NSResources.mm; sourceTree = "<group>"; };
-		506C3B311C7BB311000CE854 /* GStreamer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GStreamer.framework; path = ../../../../../../../Library/Frameworks/GStreamer.framework; sourceTree = "<group>"; };
 		508A590B1C78B146008D4CCE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		508A590D1C78B19B008D4CCE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		508A590F1C78B1C7008D4CCE /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		50CB8DC21C7B189500A50404 /* boost.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = boost.a; path = ../../../../../Builds/boost/1.60.0/libs/boost/lib/osx/boost.a; sourceTree = "<group>"; };
+		50DDE1A71C8047A4000E66CA /* libGST.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libGST.framework; path = ../libGST/Build/Products/Debug/libGST.framework; sourceTree = "<group>"; };
+		50E3BBFE1C81F93C00D7F40B /* libglib-2.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libglib-2.0.a"; path = "../../../../../Builds/GStreamer/Libraries/libglib-2.0.a"; sourceTree = "<group>"; };
+		50E3BBFF1C81F93C00D7F40B /* libgobject-2.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libgobject-2.0.a"; path = "../../../../../Builds/GStreamer/Libraries/libgobject-2.0.a"; sourceTree = "<group>"; };
+		50E3BC001C81F93C00D7F40B /* libgstapp-1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libgstapp-1.0.a"; path = "../../../../../Builds/GStreamer/Libraries/libgstapp-1.0.a"; sourceTree = "<group>"; };
+		50E3BC011C81F93C00D7F40B /* libgstreamer-1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libgstreamer-1.0.a"; path = "../../../../../Builds/GStreamer/Libraries/libgstreamer-1.0.a"; sourceTree = "<group>"; };
+		50E3BC061C81F96500D7F40B /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		50E3BC081C81F97F00D7F40B /* libffi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libffi.a; path = ../../../../../Builds/GStreamer/Libraries/libffi.a; sourceTree = "<group>"; };
+		50E3BC0A1C81F9BC00D7F40B /* libgstbase-1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libgstbase-1.0.a"; path = "../../../../../Builds/GStreamer/Libraries/libgstbase-1.0.a"; sourceTree = "<group>"; };
+		50E3BC0B1C81F9BC00D7F40B /* libintl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libintl.a; path = ../../../../../Builds/GStreamer/Libraries/libintl.a; sourceTree = "<group>"; };
+		50E3BC0E1C81F9E100D7F40B /* libgmodule-2.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libgmodule-2.0.a"; path = "../../../../../Builds/GStreamer/Libraries/libgmodule-2.0.a"; sourceTree = "<group>"; };
+		50E3BC101C81FA7100D7F40B /* libgstapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgstapp.a; path = ../../../../../Builds/GStreamer/Libraries/libgstapp.a; sourceTree = "<group>"; };
+		50E3BC111C81FA7100D7F40B /* libgstcoreelements.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgstcoreelements.a; path = ../../../../../Builds/GStreamer/Libraries/libgstcoreelements.a; sourceTree = "<group>"; };
+		50E3BC121C81FA7100D7F40B /* libgstjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgstjpeg.a; path = ../../../../../Builds/GStreamer/Libraries/libgstjpeg.a; sourceTree = "<group>"; };
+		50E3BC131C81FA7100D7F40B /* libgstvideoconvert.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgstvideoconvert.a; path = ../../../../../Builds/GStreamer/Libraries/libgstvideoconvert.a; sourceTree = "<group>"; };
+		50E3BC181C81FABE00D7F40B /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjpeg.a; path = ../../../../../Builds/GStreamer/Libraries/libjpeg.a; sourceTree = "<group>"; };
+		50E3BC1A1C81FB7800D7F40B /* libgstvideo-1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libgstvideo-1.0.a"; path = "../../../../../Builds/GStreamer/Libraries/libgstvideo-1.0.a"; sourceTree = "<group>"; };
+		50E3BC1C1C81FBF000D7F40B /* liborc-0.4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "liborc-0.4.a"; path = "../../../../../Builds/GStreamer/Libraries/liborc-0.4.a"; sourceTree = "<group>"; };
 		50FAC9D51C69F610009F3B3F /* Unchained.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Unchained.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50FAC9D81C69F610009F3B3F /* UView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UView.h; sourceTree = "<group>"; };
 		50FAC9DA1C69F610009F3B3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,11 +135,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50E3BC1D1C81FBF000D7F40B /* liborc-0.4.a in Frameworks */,
+				50E3BC1B1C81FB7800D7F40B /* libgstvideo-1.0.a in Frameworks */,
+				50E3BC191C81FABE00D7F40B /* libjpeg.a in Frameworks */,
+				50E3BC141C81FA7100D7F40B /* libgstapp.a in Frameworks */,
+				50E3BC151C81FA7100D7F40B /* libgstcoreelements.a in Frameworks */,
+				50E3BC161C81FA7100D7F40B /* libgstjpeg.a in Frameworks */,
+				50E3BC171C81FA7100D7F40B /* libgstvideoconvert.a in Frameworks */,
+				50E3BC071C81F96500D7F40B /* libiconv.tbd in Frameworks */,
+				50E3BC0D1C81F9BC00D7F40B /* libintl.a in Frameworks */,
+				50E3BC091C81F97F00D7F40B /* libffi.a in Frameworks */,
+				50E3BC0F1C81F9E100D7F40B /* libgmodule-2.0.a in Frameworks */,
+				50E3BC0C1C81F9BC00D7F40B /* libgstbase-1.0.a in Frameworks */,
+				50E3BC021C81F93C00D7F40B /* libglib-2.0.a in Frameworks */,
+				50E3BC031C81F93C00D7F40B /* libgobject-2.0.a in Frameworks */,
+				50E3BC041C81F93C00D7F40B /* libgstapp-1.0.a in Frameworks */,
+				50E3BC051C81F93C00D7F40B /* libgstreamer-1.0.a in Frameworks */,
+				50DDE1A81C8047A4000E66CA /* libGST.framework in Frameworks */,
 				50CB8DC31C7B189500A50404 /* boost.a in Frameworks */,
-				506C3B321C7BB311000CE854 /* GStreamer.framework in Frameworks */,
+				500626F41C7C913E00DE8B08 /* AppKit.framework in Frameworks */,
 				508A59101C78B1C7008D4CCE /* CoreVideo.framework in Frameworks */,
 				508A590E1C78B19B008D4CCE /* CoreMedia.framework in Frameworks */,
 				508A590C1C78B146008D4CCE /* AVFoundation.framework in Frameworks */,
+				500626D31C7C636400DE8B08 /* JavaScriptCore.framework in Frameworks */,
 				50FAC9E41C69FA3C009F3B3F /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,8 +323,26 @@
 		50FAC9E01C69F65B009F3B3F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				50E3BC1C1C81FBF000D7F40B /* liborc-0.4.a */,
+				50E3BC1A1C81FB7800D7F40B /* libgstvideo-1.0.a */,
+				50E3BC181C81FABE00D7F40B /* libjpeg.a */,
+				50E3BC101C81FA7100D7F40B /* libgstapp.a */,
+				50E3BC111C81FA7100D7F40B /* libgstcoreelements.a */,
+				50E3BC121C81FA7100D7F40B /* libgstjpeg.a */,
+				50E3BC131C81FA7100D7F40B /* libgstvideoconvert.a */,
+				50E3BC0E1C81F9E100D7F40B /* libgmodule-2.0.a */,
+				50E3BC0A1C81F9BC00D7F40B /* libgstbase-1.0.a */,
+				50E3BC0B1C81F9BC00D7F40B /* libintl.a */,
+				50E3BC081C81F97F00D7F40B /* libffi.a */,
+				50E3BC061C81F96500D7F40B /* libiconv.tbd */,
+				50E3BBFE1C81F93C00D7F40B /* libglib-2.0.a */,
+				50E3BBFF1C81F93C00D7F40B /* libgobject-2.0.a */,
+				50E3BC001C81F93C00D7F40B /* libgstapp-1.0.a */,
+				50E3BC011C81F93C00D7F40B /* libgstreamer-1.0.a */,
+				50DDE1A71C8047A4000E66CA /* libGST.framework */,
 				50CB8DC21C7B189500A50404 /* boost.a */,
-				506C3B311C7BB311000CE854 /* GStreamer.framework */,
+				500626F31C7C913E00DE8B08 /* AppKit.framework */,
+				500626D21C7C636400DE8B08 /* JavaScriptCore.framework */,
 				508A590F1C78B1C7008D4CCE /* CoreVideo.framework */,
 				508A590D1C78B19B008D4CCE /* CoreMedia.framework */,
 				508A590B1C78B146008D4CCE /* AVFoundation.framework */,
@@ -494,7 +566,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					/Users/Pascal/Builds/boost/osx/framework,
-					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+					"$(PROJECT_DIR)/../libGST/Build/Products/Debug",
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -502,7 +574,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "__ASSERT_MACROS_DEFINE_VERSIONS_WITHOUT_UNDERSCORES=0";
 				HEADER_SEARCH_PATHS = (
 					/Users/Pascal/Builds/boost/1.60.0/libs/boost/include,
-					"$(LOCAL_LIBRARY_DIR)/Frameworks/GStreamer.framework/Headers",
+					"$(PROJECT_DIR)/../libGST/Build/Products/Debug/libGST.framework/Headers",
 				);
 				INFOPLIST_FILE = Unchained/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -510,14 +582,18 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Pascal/Builds/boost/1.60.0/libs/boost/lib/osx,
-					"$(LOCAL_LIBRARY_DIR)/Frameworks/GStreamer.framework/Libraries",
+					/Users/Pascal/Builds/GStreamer/Libraries,
 				);
+				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DTARGET_OS_X",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-v",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.studio.artaban.Unchained;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -537,7 +613,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					/Users/Pascal/Builds/boost/osx/framework,
-					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+					"$(PROJECT_DIR)/../libGST/Build/Products/Release",
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -545,7 +621,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "__ASSERT_MACROS_DEFINE_VERSIONS_WITHOUT_UNDERSCORES=0";
 				HEADER_SEARCH_PATHS = (
 					/Users/Pascal/Builds/boost/1.60.0/libs/boost/include,
-					"$(LOCAL_LIBRARY_DIR)/Frameworks/GStreamer.framework/Headers",
+					"$(PROJECT_DIR)/../libGST/Build/Products/Debug/libGST.framework/Headers",
 				);
 				INFOPLIST_FILE = Unchained/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -553,14 +629,18 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Pascal/Builds/boost/1.60.0/libs/boost/lib/osx,
-					"$(LOCAL_LIBRARY_DIR)/Frameworks/GStreamer.framework/Libraries",
+					/Users/Pascal/Builds/GStreamer/Libraries,
 				);
+				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DTARGET_OS_X",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-v",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.studio.artaban.Unchained;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

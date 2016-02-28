@@ -99,25 +99,6 @@
     }
     [url release];
 
-    
-    
-    
-
-    
-    
-    
-    //JSContext* context = [self valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
-    //[[context objectForKeyedSubscript:@"console"] setObject:^(JSValue* msg) {
-    //    NSLog(@"CONSOLE: %@", msg);
-    //} forKeyedSubscript:@"log"];
-    
-    
-    
-    
-    
-    
-    
-    
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
     if (start == TRUE)
         self.Error = unchainedStart([baseURL cStringUsingEncoding:NSUTF8StringEncoding],
@@ -164,6 +145,15 @@
     [url release];
 
     [frame stopLoading];
+}
+- (void)webView:(WebView *)webView didCreateJavaScriptContext:(JSContext *)context forFrame:(WebFrame *)frame {
+    
+    context[@"console"][@"log"] = ^(JSValue* msg) {
+        NSLog(@"CONSOLE: %@", msg);
+    };
+    [context setExceptionHandler:^(JSContext* context, JSValue* value) {
+        NSLog(@"JS EXCEPTION: %@", value);
+    }];
 }
 //- (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame
 //- (void)webView:(WebView *)sender didFailProvisionalLoadWithError:(NSError *)error forFrame:(WebFrame *)frame

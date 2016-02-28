@@ -12,18 +12,18 @@
 		506C3B0F1C7B1D2C000CE854 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506C3B0E1C7B1D2C000CE854 /* ViewController.m */; };
 		506C3B111C7B1D2C000CE854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 506C3B101C7B1D2C000CE854 /* Assets.xcassets */; };
 		506C3B141C7B1D2C000CE854 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 506C3B121C7B1D2C000CE854 /* Main.storyboard */; };
-		506C3B1E1C7B2B18000CE854 /* Unchained.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506C3B1C1C7B1FED000CE854 /* Unchained.framework */; };
-		506C3B1F1C7B2B18000CE854 /* Unchained.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 506C3B1C1C7B1FED000CE854 /* Unchained.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		50D9F5F71C7DB626004D1B27 /* Unchained.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506C3B1C1C7B1FED000CE854 /* Unchained.framework */; };
+		50D9F5F81C7DB626004D1B27 /* Unchained.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 506C3B1C1C7B1FED000CE854 /* Unchained.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		506C3B201C7B2B18000CE854 /* Embed Frameworks */ = {
+		50D9F5F91C7DB627004D1B27 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				506C3B1F1C7B2B18000CE854 /* Unchained.framework in Embed Frameworks */,
+				50D9F5F81C7DB626004D1B27 /* Unchained.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				506C3B1E1C7B2B18000CE854 /* Unchained.framework in Frameworks */,
+				50D9F5F71C7DB626004D1B27 /* Unchained.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,7 +113,7 @@
 				506C3B001C7B1D2C000CE854 /* Sources */,
 				506C3B011C7B1D2C000CE854 /* Frameworks */,
 				506C3B021C7B1D2C000CE854 /* Resources */,
-				506C3B201C7B2B18000CE854 /* Embed Frameworks */,
+				50D9F5F91C7DB627004D1B27 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -283,6 +283,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_LDFLAGS = "-v";
 				PRODUCT_BUNDLE_IDENTIFIER = com.studio.artaban.YourSiteApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -299,6 +300,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_LDFLAGS = "-v";
 				PRODUCT_BUNDLE_IDENTIFIER = com.studio.artaban.YourSiteApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -323,6 +325,7 @@
 				506C3B1A1C7B1D2C000CE854 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
