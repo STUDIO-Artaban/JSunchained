@@ -13,7 +13,7 @@ Comme vous l'aurez sans doute compris, ce composant dépend de l'**OS** sur lequ
 * [Windows](https://github.com/STUDIO-Artaban/JSunchained/tree/master/Component/Windows) (UWP)
 * [Mac](https://github.com/STUDIO-Artaban/JSunchained/tree/master/Component/Mac)
 
-Comme vous pouvez le voir ci-dessous, lorsqu'une page Web utilisant la librairie **JSunchained** est affichée depuis un **OS** non géré (comme **Linux**, sur **Firefox**), ou via une application utilisant le composant `UView` d'un **OS** géré (comme [Android](https://github.com/STUDIO-Artaban/JSunchained/tree/master/Component/Android)), vous constaterez qu'elle met bien en oeuvre le code **JavaScript** défini dans cette même page (fichier [demo.html](https://github.com/STUDIO-Artaban/JSunchained/blob/master/Test/Android/YourSiteApp/assets/demo.html) via [http://jsunchained.com/demo.html](http://jsunchained.com/demo.html)).
+Comme vous pouvez le voir ci-dessous, lorsqu'une page Web utilisant la librairie **JSunchained** est affichée depuis un **OS** non géré (comme **Linux**, sur **Firefox**), ou via une application utilisant le composant `UView` d'un **OS** géré (comme [Android](https://github.com/STUDIO-Artaban/JSunchained/tree/master/Component/Android)), vous constaterez qu'elle met bien en oeuvre le code **JavaScript** défini dans cette même page uniquement sous l'**OS** géré (fichier [demo.html](https://github.com/STUDIO-Artaban/JSunchained/blob/master/Test/Android/YourSiteApp/assets/demo.html) via [http://jsunchained.com/demo.html](http://jsunchained.com/demo.html)).
 
 **OS** non géré:
 
