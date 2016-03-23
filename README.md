@@ -16,9 +16,11 @@ Comme vous l'aurez sans doute compris, ce composant dépend de l'**OS** sur lequ
 Comme vous pouvez le voir ci-dessous, lorsqu'une page Web utilisant la librairie **JSunchained** est affichée depuis un **OS** non géré (comme **Linux**, sur **Firefox**), ou via une application utilisant le composant `UView` d'un **OS** géré (comme [Android](https://github.com/STUDIO-Artaban/JSunchained/tree/master/Component/Android)), vous constaterez qu'elle met bien en oeuvre le code **JavaScript** défini dans cette même page (fichier [demo.html](https://github.com/STUDIO-Artaban/JSunchained/blob/master/Test/Android/YourSiteApp/assets/demo.html) via [http://jsunchained.com/demo.html](http://jsunchained.com/demo.html)).
 
 **OS** non géré:
+
 ![Unmanaged](https://github.com/STUDIO-Artaban/JSunchained/blob/master/Screenshots/NoJSU-demo.png)
 
 **OS** géré:
+
 ![Managed](https://github.com/STUDIO-Artaban/JSunchained/blob/master/Screenshots/JSU-demo.png)
 
 **NB:** Avant toute installation veillez à importer les sous-modules avec les commandes **git** ci-dessous.
