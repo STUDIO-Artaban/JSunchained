@@ -13,6 +13,8 @@ Comme vous l'aurez sans doute compris, ce composant dépend de l'**OS** sur lequ
 * [Windows](https://github.com/STUDIO-Artaban/JSunchained/tree/master/Component/Windows) (UWP)
 * [Mac](https://github.com/STUDIO-Artaban/JSunchained/tree/master/Component/Mac)
 
+Comme vous pouvez le voir ci-dessous, lorsqu'une même page Web utilisant la librairie **JSunchained** est affiché depuis un **OS** non géré (comme **Linux**, sur **Firefox**), et via une application 
+
 **NB:** Avant toute installation veillez à importer les sous-modules avec les commandes **git** ci-dessous.
 
 ```bash
