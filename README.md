@@ -19,7 +19,7 @@ Comme vous pouvez le voir ci-dessous, lorsqu'une page Web utilisant la librairie
 
 ![Unmanaged](https://github.com/STUDIO-Artaban/JSunchained/blob/master/Screenshots/NoJSU-demo.png)
 
-**OS** géré (**Android**, avec le composant `UView`):
+**OS** géré (avec le composant `UView` d'[Android](https://github.com/STUDIO-Artaban/JSunchained/tree/master/Component/Android)):
 
 ![Managed](https://github.com/STUDIO-Artaban/JSunchained/blob/master/Screenshots/JSU-demo.png)
 
