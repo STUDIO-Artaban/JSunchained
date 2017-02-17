@@ -13,7 +13,7 @@ I guess you understand that this component depends on the **OS** on which you wa
 * [Windows](https://github.com/STUDIO-Artaban/JSunchained/tree/master/Component/Windows) (UWP)
 * [Mac](https://github.com/STUDIO-Artaban/JSunchained/tree/master/Component/Mac)
 
-As you can see in the example below when a web page using the **JSunchained** library is displayed a none managed **OS** (as **Linux** on **Firefox** browser), or via an application using the `UView` component of a managed **OS** (as [Android](https://github.com/STUDIO-Artaban/JSunchained/tree/master/Component/Android)), you can see that it implements the **JavaScript** code as requested only under the managed **OS** (see line 22 of file [demo.html](https://github.com/STUDIO-Artaban/JSunchained/blob/master/Test/Android/YourSiteApp/assets/demo.html) via [http://jsunchained.com/demo.html](http://jsunchained.com/demo.html)).
+As you can see in the example below (see [Test](https://github.com/STUDIO-Artaban/JSunchained/tree/master/Test)), when a web page using the **JSunchained** library is displayed a none managed **OS** (as **Linux** on **Firefox** browser), or via an application using the `UView` component of a managed **OS** (as [Android](https://github.com/STUDIO-Artaban/JSunchained/tree/master/Component/Android)), you can see that it implements the **JavaScript** code as requested only under the managed **OS** (see line 22 of file [demo.html](https://github.com/STUDIO-Artaban/JSunchained/blob/master/Test/Android/YourSiteApp/assets/demo.html) via [http://jsunchained.com/demo.html](http://jsunchained.com/demo.html)).
 
 Unmanaged **OS** (Linux):
 
